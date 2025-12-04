@@ -1,0 +1,332 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* CABECERA */
+.cabecera-principal {
+    background-color: #4FD1C5;
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cabecera-principal>div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-sitio {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F6E05E;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.cabecera-principal h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.cabecera-principal hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
+.busqueda {
+    display: none;
+}
+
+/* FILTROS */
+.filtros-busqueda {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.filtro-zona,
+.filtro-categoria {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtro-zona label,
+.filtro-categoria label {
+    display: none;
+}
+
+select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background-color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+select:hover {
+    border-color: #cbd5e0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.boton-abierto,
+.boton-whatsapp {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background-color: white;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.boton-abierto:hover,
+.boton-whatsapp:hover {
+    background-color: #f7fafc;
+}
+
+/* LAYOUT PRINCIPAL */
+.resultados-y-mapa {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 140px);
+}
+
+/* LISTA */
+.lista-resultados {
+    padding: 1rem;
+    background-color: #f7fafc;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.lista-resultados h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.tarjeta-distribuidora {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.logo-empresa {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background-color: #edf2f7;
+    border-radius: 0.375rem;
+}
+
+.detalles-empresa h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: #2d3748;
+}
+
+.detalles-empresa p {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.boton-detalles {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.85rem;
+}
+
+/* MAPA */
+.mapa-ubicacion {
+    flex: 1;
+    background-color: #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor-mapa {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-mapa figure {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.imagen-mapa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+.zoom-mas,
+.zoom-menos {
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-mas {
+    top: 10px;
+}
+
+.zoom-menos {
+    top: 40px;
+}
+
+/* PIE */
+.pie-pagina {
+    background-color: #000;
+    color: #cbd5e0;
+    padding: 3rem 2rem;
+    font-size: 0.9rem;
+}
+
+.contenido-pie {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pie-pagina h3,
+.pie-pagina h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.pie-pagina ul {
+    list-style: none;
+}
+
+.pie-pagina ul li {
+    margin-bottom: 0.5rem;
+}
+
+.pie-pagina a {
+    color: #a0aec0;
+    text-decoration: none;
+}
+
+.pie-pagina a:hover {
+    color: white;
+}
+
+.form-suscripcion {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.campo-email {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    background: #2d3748;
+    color: white;
+    flex: 1;
+}
+
+.boton-secundario {
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.derechos-reservados {
+    border-top: 1px solid #2d3748;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .contenido-pie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .resultados-y-mapa {
+        flex-direction: row;
+    }
+
+    .lista-resultados {
+        width: 40%;
+        border-right: 1px solid #e2e8f0;
+    }
+
+    .mapa-ubicacion {
+        width: 60%;
+    }
+
+    .cabecera-principal {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .contenido-pie {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+}
