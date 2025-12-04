@@ -5,299 +5,365 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EmprendeHub - Inicio</title>
+    <link rel="stylesheet" href="estilos-Inicio.css">
 </head>
 
 <body>
 
-    <header>
-        <div>
-            <div>
-                <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
+    <header class="encabezado">
+        <div class="fila-superior">
+            <div class="logo-contenedor">
+                <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)" class="logo-imagen">
             </div>
-            <h1>EmprendeHub</h1>
+            <h1 id="titulo-sitio">EmprendeHub</h1>
 
-            <nav>
-                <button>Agencias</button>
-                <button>Distribuidoras</button>
-                <button>Importadoras</button>
+            <nav class="navegacion-principal">
+                <button class="boton-nav">Agencias</button>
+                <button class="boton-nav">Distribuidoras</button>
+                <button class="boton-nav">Importadoras</button>
             </nav>
 
         </div>
 
-        <div>
-            <div>
-                &#128269;
-                <input type="text" placeholder="Buscar">
+        <div class="fila-busqueda">
+            <div class="buscador-contenedor">
+                <span class="icono-busqueda">&#128269;</span>
+                <input type="text" placeholder="Buscar" class="campo-busqueda">
             </div>
-            <button>Búsqueda</button>
-            <div>
-                <input type="text" placeholder="Ubicación">
+            <button class="boton-primario" id="boton-buscar">Búsqueda</button>
+            <div class="ubicacion-contenedor">
+
+                <select id="selector-zona" class="campo-ubicacion">
+                    <option value="" disabled selected>Zona</option>
+                    <option value="1">1 Villa Adela</option>
+                    <option value="2">2 Villa Bolívar A</option>
+                    <option value="3">3 Villa Bolívar B</option>
+                    <option value="4">4 Villa Bolívar C</option>
+                    <option value="5">5 12 de Octubre</option>
+                    <option value="6">6 Villa Ingenio</option>
+                    <option value="7">7 Senkata</option>
+                    <option value="8">8 Alto Lima 1ra Sección</option>
+                    <option value="9">9 Alto Lima 2da Sección</option>
+                    <option value="10">10 Alto Lima 3ra Sección</option>
+                    <option value="11">11 Ballivián</option>
+                    <option value="12">12 Río Seco</option>
+                    <option value="13">13 Villa Tunari</option>
+                    <option value="14">14 Cosmos 79</option>
+                    <option value="15">15 Santiago Primero</option>
+                    <option value="16">16 Santiago Segundo</option>
+                    <option value="17">17 Santiago Tercero</option>
+                    <option value="18">18 Villa Hermosa</option>
+                    <option value="19">19 Mercado Campana</option>
+                    <option value="20">20 Ferroviario</option>
+                    <option value="21">21 Villa Esperanza</option>
+                    <option value="22">22 La Ceja</option>
+                    <option value="23">23 Villa Dolores</option>
+                    <option value="24">24 Ciudad Satélite</option>
+                    <option value="25">25 Urbanización Mercedario</option>
+                    <option value="26">26 Villa Pacajes</option>
+                    <option value="27">27 Villa Rosario</option>
+                    <option value="28">28 Villa Ballivián</option>
+                    <option value="29">29 Villa Exaltación</option>
+                    <option value="30">30 16 de Julio</option>
+                    <option value="31">31 Faro Murillo</option>
+                    <option value="32">32 Villa San Antonio</option>
+                    <option value="33">33 Héroes del Pacífico</option>
+                    <option value="34">34 Villa Primero de Mayo</option>
+                    <option value="35">35 El Kenko</option>
+                    <option value="36">36 Rosario</option>
+                    <option value="37">37 San Luis</option>
+                    <option value="38">38 Tarapacá</option>
+                    <option value="39">39 Huayna Potosí</option>
+                    <option value="40">40 Villa Bolívar D</option>
+                    <option value="41">41 Urbanización Tiahuanacu</option>
+                    <option value="42">42 Ciudad Satélite – 14 de Septiembre</option>
+                    <option value="43">43 Villa Antofagasta</option>
+                    <option value="44">44 Urbanización Bautista Saavedra</option>
+                    <option value="45">45 Urbanización Libertad</option>
+                    <option value="46">46 Urbanización Señor de Lagunas</option>
+                    <option value="47">47 Urbanización Lotes y Servicios</option>
+                    <option value="48">48 Urbanización San Roque</option>
+                    <option value="49">49 Urbanización Pedro Domingo Murillo</option>
+                    <option value="50">50 Avenida Juan Pablo II (Sectores)</option>
+                </select>
             </div>
         </div>
     </header>
     <hr>
-    <main>
-        <section>
-            <div>
-                <h2>¿Qué estás buscando?</h2>
-                <div>
-                    <button>&#9664;</button>
-                    <button>&#9654;</button>
+    <main class="contenido-principal">
+        <section class="seccion-categorias">
+            <div class="encabezado-categoria">
+                <h2 id="titulo-categorias">¿Qué estás buscando?</h2>
+                <div class="controles-carrusel">
+                    <button class="boton-carrusel atras">&#9664;</button>
+                    <button class="boton-carrusel adelante">&#9654;</button>
                 </div>
             </div>
 
-            <div>
-                <button>
-                    <div>&#128717;</div>
+            <div class="lista-categorias">
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128717;</div>
                     <span>Consumo masivo</span>
                 </button>
-                <button>
-                    <div>&#127866;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#127866;</div>
                     <span>Bebidas y licores</span>
                 </button>
-                <button>
-                    <div>&#127822;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#127822;</div>
                     <span>Alimentos frescos, refrigerados o perecederos</span>
                 </button>
-                <button>
-                    <div>&#129530;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#129530;</div>
                     <span>Higiene, limpieza y cuidado del hogar</span>
                 </button>
-                <button>
-                    <div>&#128132;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128132;</div>
                     <span>Cosmética y cuidado personal</span>
                 </button>
-                <button>
-                    <div>&#128187;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128187;</div>
                     <span>Electrónica y tecnología de consumo</span>
                 </button>
-                <button>
-                    <div>&#128085;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128085;</div>
                     <span>Moda, calzado y textil</span>
                 </button>
-                <button>
-                    <div>&#127922;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#127922;</div>
                     <span>Juguetes y artículos infantiles</span>
                 </button>
-                <button>
-                    <div>&#128736;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128736;</div>
                     <span>Ferretería, construcción y herramientas</span>
                 </button>
-                <button>
-                    <div>&#128663;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128663;</div>
                     <span>Automotriz</span>
                 </button>
-                <button>
-                    <div>&#129505;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#129505;</div>
                     <span>Salud, farmacia y cuidado médico</span>
                 </button>
-                <button>
-                    <div>&#9999;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#9999;</div>
                     <span>Oficina y papelería</span>
                 </button>
-                <button>
-                    <div>&#128717;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128717;</div>
                     <span>Hogar, decoración y menaje</span>
                 </button>
-                <button>
-                    <div>&#128737;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128737;</div>
                     <span>Seguridad y protección</span>
                 </button>
-                <button>
-                    <div>&#127881;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#127881;</div>
                     <span>Eventos, fiestas y artículos de celebración</span>
                 </button>
-                <button>
-                    <div>&#127793;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#127793;</div>
                     <span>Agroindustrial y agricultura</span>
                 </button>
-                <button>
-                    <div>&#128054;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128054;</div>
                     <span>Mascotas</span>
                 </button>
-                <button>
-                    <div>&#128719;</div>
+                <button class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128719;</div>
                     <span>Muebles y electrodomésticos grandes</span>
                 </button>
             </div>
         </section>
 
-        <section>
-            <div>
+        <section class="seccion-destacada">
+            <div class="encabezado-destacado">
                 <h3>Lo mejor de la categoría: **Consumo Masivo**</h3>
-                <button>Ver más</button>
+                <button class="boton-secundario">Ver más</button>
             </div>
-            <div>
-                <button>
-                    <div>
+            <div class="lista-tarjetas">
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
             </div>
         </section>
 
-        <section>
-            <div>
+        <section class="seccion-destacada">
+            <div class="encabezado-destacado">
                 <h3>Lo mejor de la categoría: **Limpieza y Cuidado**</h3>
-                <button>Ver más</button>
+                <button class="boton-secundario">Ver más</button>
             </div>
-            <div>
-                <button>
-                    <div>
+            <div class="lista-tarjetas">
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
             </div>
         </section>
 
-        <section>
-            <div>
+        <section class="seccion-destacada">
+            <div class="encabezado-destacado">
                 <h3>Lo mejor de la categoría: **Oficina y Papelería**</h3>
-                <button>Ver más</button>
+                <button class="boton-secundario">Ver más</button>
             </div>
-            <div>
-                <button>
-                    <div>
+            <div class="lista-tarjetas">
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
-                <button>
-                    <div>
+                <button class="tarjeta-negocio">
+                    <div class="imagen-negocio">
                         <img src="URL_DE_LA_IMAGEN_DEL_LOGO" alt="Logo de la compañía (pendiente de subir)">
                     </div>
-                    <div>
-                        <p>Nombre de la distribuidora</p>
-                        <p>Categoría</p>
-                        <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
+                    <div class="info-negocio">
+                        <p class="nombre-distribuidora">Nombre de la distribuidora</p>
+                        <p class="categoria-distribuidora">Categoría</p>
+                        <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidor/Agencia/Importadora</span>
+                        </p>
                         <p>Zona</p>
                     </div>
                 </button>
             </div>
         </section>
 
-        <div>
-            <button>MÁS CATEGORÍAS</button>
+        <div class="contenedor-boton-final">
+            <button class="boton-primario boton-grande">MÁS CATEGORÍAS</button>
         </div>
     </main>
 
     <hr>
 
-    <footer>
-        <div>
-            <div>
+    <footer class="pie-pagina">
+        <div class="contenido-pie">
+            <div class="columna-suscripcion">
                 <h3>EmprendeHub</h3>
-                <div>
-                    <input type="email" placeholder="Ingresa tu Email">
-                    <button>Suscribir</button>
+                <div class="form-suscripcion">
+                    <input type="email" placeholder="Ingresa tu Email" class="campo-email">
+                    <button class="boton-secundario">Suscribir</button>
                 </div>
             </div>
-            <div>
+            <div class="columna-enlaces">
                 <h4>Enlaces rápidos</h4>
                 <ul>
                     <li><a href="#">Inicio</a></li>
@@ -305,7 +371,7 @@
                     <li><a href="#">Buscar</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="columna-contacto">
                 <h4>Para distribuidoras</h4>
                 <ul>
                     <li><a href="#"> Registrar negocio</a></li>
@@ -314,7 +380,7 @@
                 <p>&#9990; WhatsApp de soporte: +591 70000000</p>
                 <p>&#9993; Email: contacto@EmprendeHub .com</p>
             </div>
-            <div>
+            <div class="columna-legal">
                 <h4>Legal</h4>
                 <ul>
                     <li><a href="#"> Términos y condiciones</a></li>
@@ -322,7 +388,7 @@
                 </ul>
             </div>
         </div>
-        <div>
+        <div class="derechos-reservados">
             <p>&copy; 2025 EmprendeHub.Todos los derechos reservados.</p>
         </div>
     </footer>

@@ -5,28 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EmprendeHub - Distribuidoras</title>
-
+    <link rel="stylesheet" href="estilos-distribuidoras.css">
 </head>
 
 <body>
 
-    <header class="main-header">
+    <header class="cabecera-principal">
         <div>
-            <img src="URL_DEL_LOGO_EMPRENDEHUB.png" alt="Logo de EmprendeHub">
+            <img src="URL_DEL_LOGO_EMPRENDEHUB.png" alt="Logo de EmprendeHub" class="logo-sitio">
             <h1>EmprendeHub</h1>
         </div>
         <hr>
-        <section>
+        <section class="busqueda">
             <h2>¿Qué estás buscando?</h2>
-            <div>
+            <div class="campo-busqueda">
                 <span>&#128269;</span>
                 <input type="text" placeholder="Buscar">
             </div>
         </section>
     </header>
 
-    <nav>
-        <div>
+    <nav class="filtros-busqueda">
+        <div class="filtro-zona">
             <label>Seleccionar Zona</label>
             <select>
                 <option>Zona</option>
@@ -82,7 +82,7 @@
                 <option>50 Avenida Juan Pablo II (Sectores)</option>
             </select>
         </div>
-        <div>
+        <div class="filtro-categoria">
             <label>Seleccionar Categoría</label>
             <select>
                 <option>Categoría</option>
@@ -106,84 +106,85 @@
                 <option>&#128719; Muebles y electrodomésticos grandes</option>
             </select>
         </div>
-        <button>Abierto ahora </button>
-
-        <button> Con WhatsApp Directo</button>
+        <button class="boton-abierto">Abierto ahora </button>
+        <button class="boton-whatsapp"> Con WhatsApp Directo</button>
     </nav>
 
-    <main>
-        <section>
+    <main class="resultados-y-mapa">
+        <section class="lista-resultados">
             <h2>Resultados (4)</h2>
 
-            <article>
-                <img src="URL_DEL_LOGO" alt="logo">
-                <div>
+            <article class="tarjeta-distribuidora">
+                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <div class="detalles-empresa">
                     <h3>Nombre de la Empresa</h3>
                     <p>Categoría</p>
                     <p>Zona</p>
                     <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
                     <p>Productos: Producto 1, Producto 2, Producto 3</p>
                 </div>
-                <button>Ver detalles</button>
+                <button class="boton-detalles">Ver detalles</button>
             </article>
 
-            <article>
-                <img src="URL_DEL_LOGO" alt="logo">
-                <div>
+            <article class="tarjeta-distribuidora">
+                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <div class="detalles-empresa">
                     <h3>Nombre de la Empresa</h3>
                     <p>Categoría</p>
                     <p>Zona</p>
                     <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
                     <p>Productos: Producto 1, Producto 2, Producto 3</p>
                 </div>
-                <button>Ver detalles</button>
+                <button class="boton-detalles">Ver detalles</button>
             </article>
 
-            <article>
-                <img src="URL_DEL_LOGO" alt="logo">
-                <div>
+            <article class="tarjeta-distribuidora">
+                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <div class="detalles-empresa">
                     <h3>Nombre de la Empresa</h3>
                     <p>Categoría</p>
                     <p>Zona</p>
                     <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
                     <p>Productos: Producto 1, Producto 2, Producto 3</p>
                 </div>
-                <button>Ver detalles</button>
+                <button class="boton-detalles">Ver detalles</button>
             </article>
-            <article>
-                <img src="URL_DEL_LOGO" alt="logo">
-                <div>
+
+            <article class="tarjeta-distribuidora">
+                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <div class="detalles-empresa">
                     <h3>Nombre de la Empresa</h3>
                     <p>Categoría</p>
                     <p>Zona</p>
                     <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
                     <p>Productos: Producto 1, Producto 2, Producto 3</p>
                 </div>
-                <button>Ver detalles</button>
+                <button class="boton-detalles">Ver detalles</button>
             </article>
         </section>
-        <section>
-            <div>
+
+        <section class="mapa-ubicacion">
+            <div class="contenedor-mapa">
                 <figure>
-                    <img src="mapa-simulado.png" alt="Mapa de la ubicación de la empresa" class="map-image">
+                    <img src="mapa-simulado.png" alt="Mapa de la ubicación de la empresa" class="imagen-mapa">
                     <figcaption>Ubicación aproximada</figcaption>
-                    <button>+</button>
-                    <button>-</button>
+                    <button class="zoom-mas">+</button>
+                    <button class="zoom-menos">-</button>
                 </figure>
             </div>
         </section>
     </main>
     <hr>
-    <footer>
-        <div>
-            <div>
+    <footer class="pie-pagina">
+        <div class="contenido-pie">
+            <div class="columna-suscripcion">
                 <h3>EmprendeHub</h3>
-                <div>
-                    <input type="email" placeholder="Ingresa tu Email">
-                    <button>Suscribir</button>
+                <div class="form-suscripcion">
+                    <input type="email" placeholder="Ingresa tu Email" class="campo-email">
+                    <button class="boton-secundario">Suscribir</button>
                 </div>
             </div>
-            <div>
+            <div class="columna-enlaces">
                 <h4>Enlaces rápidos</h4>
                 <ul>
                     <li><a href="#">Inicio</a></li>
@@ -191,7 +192,7 @@
                     <li><a href="#">Buscar</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="columna-contacto">
                 <h4>Para distribuidoras</h4>
                 <ul>
                     <li><a href="#"> Registrar negocio</a></li>
@@ -200,7 +201,7 @@
                 <p>&#9990; WhatsApp de soporte: +591 70000000</p>
                 <p>&#9993; Email: contacto@EmprendeHub .com</p>
             </div>
-            <div>
+            <div class="columna-legal">
                 <h4>Legal</h4>
                 <ul>
                     <li><a href="#"> Términos y condiciones</a></li>
@@ -208,10 +209,11 @@
                 </ul>
             </div>
         </div>
-        <div>
+        <div class="derechos-reservados">
             <p>&copy; 2025 EmprendeHub.Todos los derechos reservados.</p>
         </div>
     </footer>
+
 </body>
 
 </html>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos-Categoria.css">
     <title>EmprendeHub - Categoría</title>
-
 </head>
 
 <body>
@@ -18,9 +18,9 @@
         <hr>
         <section>
             <h2>¿Qué estás buscando?</h2>
-            <div>
+            <div class="contenedor-busqueda">
                 <span>&#128269;</span>
-                <input type="text" placeholder="Buscar">
+                <input type="text" id="entrada-busqueda" placeholder="Buscar">
             </div>
         </section>
 
@@ -29,636 +29,670 @@
     <main>
         <h3>Búsqueda de empresas por categoría</h3>
 
-        <div>
-            <div>
-                <div>&#128717;</div>
-                <span>Consumo Masivo / FMCG</span>
-                <ul>
+        <div class="contenedor-categorias">
+
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128717;</div>
+                    <span>Consumo Masivo / FMCG</span>
+                </div>
+
+                <ul class="lista-subcategorias">
                     <li>Alimentos y Bebidas Empaquetadas
-                        <ul>
-                            <li><a href="#">Arroz, azúcar, fideos</a></li>
-                            <li><a href="#">Aceite vegetal</a></li>
-                            <li><a href="#">Atún, sardinas, conservas</a></li>
-                            <li><a href="#">Mermeladas, mieles</a></li>
-                            <li><a href="#">Galletas, panetones, bizcochos</a></li>
-                            <li><a href="#">Salsas (mayonesa, ketchup, soya)</a></li>
-                            <li><a href="#">Sopas instantáneas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Arroz, azúcar, fideos">Arroz, azúcar, fideos</a></li>
+                            <li><a href="#" aria-label="Aceite vegetal">Aceite vegetal</a></li>
+                            <li><a href="#" aria-label="Atún, sardinas, conservas">Atún, sardinas, conservas</a></li>
+                            <li><a href="#" aria-label="Mermeladas, mieles">Mermeladas, mieles</a></li>
+                            <li><a href="#" aria-label="Galletas, panetones, bizcochos">Galletas, panetones,
+                                    bizcochos</a></li>
+                            <li><a href="#" aria-label="Salsas">Salsas (mayonesa, ketchup, soya)</a></li>
+                            <li><a href="#" aria-label="Sopas instantáneas">Sopas instantáneas</a></li>
                         </ul>
                     </li>
                     <li>Lácteos y Derivados
-                        <ul>
-                            <li><a href="#">Leche entera/descremada</a></li>
-                            <li><a href="#">Yogures</a></li>
-                            <li><a href="#">Quesos</a></li>
-                            <li><a href="#">Mantequilla, margarina</a></li>
-                            <li><a href="#">Bebidas lácteas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Leche entera/descremada">Leche entera/descremada</a></li>
+                            <li><a href="#" aria-label="Yogures">Yogures</a></li>
+                            <li><a href="#" aria-label="Quesos">Quesos</a></li>
+                            <li><a href="#" aria-label="Mantequilla, margarina">Mantequilla, margarina</a></li>
+                            <li><a href="#" aria-label="Bebidas lácteas">Bebidas lácteas</a></li>
                         </ul>
                     </li>
                     <li>Snacks y Golosinas
-                        <ul>
-                            <li><a href="#">Papas fritas, nachos</a></li>
-                            <li><a href="#">Chocolates</a></li>
-                            <li><a href="#">Caramelos</a></li>
-                            <li><a href="#">Gomas</a></li>
-                            <li><a href="#">Barras energéticas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Papas fritas, nachos">Papas fritas, nachos</a></li>
+                            <li><a href="#" aria-label="Chocolates">Chocolates</a></li>
+                            <li><a href="#" aria-label="Caramelos">Caramelos</a></li>
+                            <li><a href="#" aria-label="Gomas">Gomas</a></li>
+                            <li><a href="#" aria-label="Barras energéticas">Barras energéticas</a></li>
                         </ul>
                     </li>
                     <li>Bebidas Sin Alcohol y Energéticas
-                        <ul>
-                            <li><a href="#">Aguas</a></li>
-                            <li><a href="#">Gaseosas</a></li>
-                            <li><a href="#">Jugos</a></li>
-                            <li><a href="#">Bebidas deportivas</a></li>
-                            <li><a href="#">Bebidas energizantes</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Aguas">Aguas</a></li>
+                            <li><a href="#" aria-label="Gaseosas">Gaseosas</a></li>
+                            <li><a href="#" aria-label="Jugos">Jugos</a></li>
+                            <li><a href="#" aria-label="Bebidas deportivas">Bebidas deportivas</a></li>
+                            <li><a href="#" aria-label="Bebidas energizantes">Bebidas energizantes</a></li>
                         </ul>
                     </li>
                     <li>Limpieza del Hogar
-                        <ul>
-                            <li><a href="#">Detergente en polvo/líquido</a></li>
-                            <li><a href="#">Suavizantes</a></li>
-                            <li><a href="#">Lejía / lavandina</a></li>
-                            <li><a href="#">Desinfectantes</a></li>
-                            <li><a href="#">Limpiadores multiuso</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Detergente en polvo/líquido">Detergente en polvo/líquido</a>
+                            </li>
+                            <li><a href="#" aria-label="Suavizantes">Suavizantes</a></li>
+                            <li><a href="#" aria-label="Lejía / lavandina">Lejía / lavandina</a></li>
+                            <li><a href="#" aria-label="Desinfectantes">Desinfectantes</a></li>
+                            <li><a href="#" aria-label="Limpiadores multiuso">Limpiadores multiuso</a></li>
                         </ul>
                     </li>
                     <li>Cuidado Personal e Higiene
-                        <ul>
-                            <li><a href="#">Jabones</a></li>
-                            <li><a href="#">Shampoo / acondicionador</a></li>
-                            <li><a href="#">Deodorantes</a></li>
-                            <li><a href="#">Pasta dental</a></li>
-                            <li><a href="#">Toallas húmedas</a></li>
-                            <li><a href="#">Papel higiénico</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Jabones">Jabones</a></li>
+                            <li><a href="#" aria-label="Shampoo / acondicionador">Shampoo / acondicionador</a></li>
+                            <li><a href="#" aria-label="Deodorantes">Deodorantes</a></li>
+                            <li><a href="#" aria-label="Pasta dental">Pasta dental</a></li>
+                            <li><a href="#" aria-label="Toallas húmedas">Toallas húmedas</a></li>
+                            <li><a href="#" aria-label="Papel higiénico">Papel higiénico</a></li>
                         </ul>
                     </li>
                     <li>Productos OTC (Venta Rápida)
-                        <ul>
-                            <li><a href="#">Paracetamol</a></li>
-                            <li><a href="#">Ibuprofeno</a></li>
-                            <li><a href="#">Sales rehidratantes</a></li>
-                            <li><a href="#">Vitaminas básicas</a></li>
-                            <li><a href="#">Cremas tópicas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Paracetamol">Paracetamol</a></li>
+                            <li><a href="#" aria-label="Ibuprofeno">Ibuprofeno</a></li>
+                            <li><a href="#" aria-label="Sales rehidratantes">Sales rehidratantes</a></li>
+                            <li><a href="#" aria-label="Vitaminas básicas">Vitaminas básicas</a></li>
+                            <li><a href="#" aria-label="Cremas tópicas">Cremas tópicas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#127866;</div>
-                <span>Bebidas y Licores</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#127866;</div>
+                    <span>Bebidas y Licores</span>
+                </div>
+
+                <ul class="lista-subcategorias">
                     <li>Aguas, Jugos, Refrescos
-                        <ul>
-                            <li><a href="#">Agua natural y saborizada</a></li>
-                            <li><a href="#">Jugos en botella</a></li>
-                            <li><a href="#">Refrescos gasificados</a></li>
-                            <li><a href="#">Té frío</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Agua natural y saborizada">Agua natural y saborizada</a></li>
+                            <li><a href="#" aria-label="Jugos en botella">Jugos en botella</a></li>
+                            <li><a href="#" aria-label="Refrescos gasificados">Refrescos gasificados</a></li>
+                            <li><a href="#" aria-label="Té frío">Té frío</a></li>
                         </ul>
                     </li>
                     <li>Cervezas, Vinos y Destilados
-                        <ul>
-                            <li><a href="#">Cervezas nacionales/importadas</a></li>
-                            <li><a href="#">Vinos tintos/blancos/rosados</a></li>
-                            <li><a href="#">Whisky, ron, vodka, gin</a></li>
-                            <li><a href="#">Cocteles embotellados</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cervezas nacionales/importadas">Cervezas
+                                    nacionales/importadas</a></li>
+                            <li><a href="#" aria-label="Vinos tintos/blancos/rosados">Vinos tintos/blancos/rosados</a>
+                            </li>
+                            <li><a href="#" aria-label="Whisky, ron, vodka, gin">Whisky, ron, vodka, gin</a></li>
+                            <li><a href="#" aria-label="Cocteles embotellados">Cocteles embotellados</a></li>
                         </ul>
                     </li>
                     <li>Bebidas Especiales o Importadas
-                        <ul>
-                            <li><a href="#">Aguas premium</a></li>
-                            <li><a href="#">Cervezas artesanales</a></li>
-                            <li><a href="#">Sake</a></li>
-                            <li><a href="#">Licores de alta gama</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Aguas premium">Aguas premium</a></li>
+                            <li><a href="#" aria-label="Cervezas artesanales">Cervezas artesanales</a></li>
+                            <li><a href="#" aria-label="Sake">Sake</a></li>
+                            <li><a href="#" aria-label="Licores de alta gama">Licores de alta gama</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#127822;</div>
-                <span>Alimentos Frescos, Refrigerados y Perecederos</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#127822;</div>
+                    <span>Alimentos Frescos, Refrigerados y Perecederos</span>
+                </div>
+
+                <ul class="lista-subcategorias">
                     <li>Frutas y Verduras
-                        <ul>
-                            <li><a href="#">Manzana, naranja, plátano</a></li>
-                            <li><a href="#">Tomate, cebolla, lechuga</a></li>
-                            <li><a href="#">Papas, zanahorias</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Manzana, naranja, plátano">Manzana, naranja, plátano</a></li>
+                            <li><a href="#" aria-label="Tomate, cebolla, lechuga">Tomate, cebolla, lechuga</a></li>
+                            <li><a href="#" aria-label="Papas, zanahorias">Papas, zanahorias</a></li>
                         </ul>
                     </li>
                     <li>Carnes, Pescados y Embutidos
-                        <ul>
-                            <li><a href="#">Carne vacuna</a></li>
-                            <li><a href="#">Pollo</a></li>
-                            <li><a href="#">Pescados congelados</a></li>
-                            <li><a href="#">Embutidos (chorizos, jamón, salchichas)</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Carne vacuna">Carne vacuna</a></li>
+                            <li><a href="#" aria-label="Pollo">Pollo</a></li>
+                            <li><a href="#" aria-label="Pescados congelados">Pescados congelados</a></li>
+                            <li><a href="#" aria-label="Embutidos">Embutidos (chorizos, jamón, salchichas)</a></li>
                         </ul>
                     </li>
                     <li>Congelados, Panadería, Repostería
-                        <ul>
-                            <li><a href="#">Vegetales congelados</a></li>
-                            <li><a href="#">Pan de molde</a></li>
-                            <li><a href="#">Masas, pasteles, postres</a></li>
-                            <li><a href="#">Empanizados congelados</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Vegetales congelados">Vegetales congelados</a></li>
+                            <li><a href="#" aria-label="Pan de molde">Pan de molde</a></li>
+                            <li><a href="#" aria-label="Masas, pasteles, postres">Masas, pasteles, postres</a></li>
+                            <li><a href="#" aria-label="Empanizados congelados">Empanizados congelados</a></li>
                         </ul>
                     </li>
                     <li>Productos Gourmet
-                        <ul>
-                            <li><a href="#">Quesos premium</a></li>
-                            <li><a href="#">Aceites especiales</a></li>
-                            <li><a href="#">Carnes maduradas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Quesos premium">Quesos premium</a></li>
+                            <li><a href="#" aria-label="Aceites especiales">Aceites especiales</a></li>
+                            <li><a href="#" aria-label="Carnes maduradas">Carnes maduradas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#129530;</div>
-                <span>Higiene, Limpieza y Cuidado del Hogar</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#129530;</div>
+                    <span>Higiene, Limpieza y Cuidado del Hogar</span>
+                </div>
+
+                <ul class="lista-subcategorias">
                     <li>Detergentes, Suavizantes, Desinfectantes
-                        <ul>
-                            <li><a href="#">Detergente polvo/líquido</a></li>
-                            <li><a href="#">Suavizantes florales</a></li>
-                            <li><a href="#">Limpiadores perfumados</a></li>
-                            <li><a href="#">Cloro y desinfectantes antibacteriales</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Detergente polvo/líquido">Detergente polvo/líquido</a></li>
+                            <li><a href="#" aria-label="Suavizantes florales">Suavizantes florales</a></li>
+                            <li><a href="#" aria-label="Limpiadores perfumados">Limpiadores perfumados</a></li>
+                            <li><a href="#" aria-label="Cloro y desinfectantes antibacteriales">Cloro y desinfectantes
+                                    antibacteriales</a></li>
                         </ul>
                     </li>
                     <li>Limpiadores y Sanitizantes
-                        <ul>
-                            <li><a href="#">Multiusos</a></li>
-                            <li><a href="#">Limpiavidrios</a></li>
-                            <li><a href="#">Quitamanchas</a></li>
-                            <li><a href="#">Alcohol en gel</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Multiusos">Multiusos</a></li>
+                            <li><a href="#" aria-label="Limpiavidrios">Limpiavidrios</a></li>
+                            <li><a href="#" aria-label="Quitamanchas">Quitamanchas</a></li>
+                            <li><a href="#" aria-label="Alcohol en gel">Alcohol en gel</a></li>
                         </ul>
                     </li>
                     <li>Aromatizantes y Accesorios
-                        <ul>
-                            <li><a href="#">Ambientadores</a></li>
-                            <li><a href="#">Difusores</a></li>
-                            <li><a href="#">Cepillos</a></li>
-                            <li><a href="#">Paños y esponjas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Ambientadores">Ambientadores</a></li>
+                            <li><a href="#" aria-label="Difusores">Difusores</a></li>
+                            <li><a href="#" aria-label="Cepillos">Cepillos</a></li>
+                            <li><a href="#" aria-label="Paños y esponjas">Paños y esponjas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128132;</div>
-                <span>Cosmética y Cuidado Personal</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128132;</div>
+                    <span>Cosmética y Cuidado Personal</span>
+                </div>
+
+                <ul class="lista-subcategorias">
                     <li>Maquillaje
-                        <ul>
-                            <li><a href="#">Bases</a></li>
-                            <li><a href="#">Labiales</a></li>
-                            <li><a href="#">Sombras</a></li>
-                            <li><a href="#">Delineadores</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Bases">Bases</a></li>
+                            <li><a href="#" aria-label="Labiales">Labiales</a></li>
+                            <li><a href="#" aria-label="Sombras">Sombras</a></li>
+                            <li><a href="#" aria-label="Delineadores">Delineadores</a></li>
                         </ul>
                     </li>
                     <li>Fragancias y Cremas
-                        <ul>
-                            <li><a href="#">Perfumes</a></li>
-                            <li><a href="#">Cremas hidratantes</a></li>
-                            <li><a href="#">Cremas antiarrugas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Perfumes">Perfumes</a></li>
+                            <li><a href="#" aria-label="Cremas hidratantes">Cremas hidratantes</a></li>
+                            <li><a href="#" aria-label="Cremas antiarrugas">Cremas antiarrugas</a></li>
                         </ul>
                     </li>
                     <li>Cuidado Capilar
-                        <ul>
-                            <li><a href="#">Shampoo</a></li>
-                            <li><a href="#">Acondicionador</a></li>
-                            <li><a href="#">Tratamientos capilares</a></li>
-                            <li><a href="#">Gel y ceras</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Shampoo">Shampoo</a></li>
+                            <li><a href="#" aria-label="Acondicionador">Acondicionador</a></li>
+                            <li><a href="#" aria-label="Tratamientos capilares">Tratamientos capilares</a></li>
+                            <li><a href="#" aria-label="Gel y ceras">Gel y ceras</a></li>
                         </ul>
                     </li>
                     <li>Barbería y Cuidado Masculino
-                        <ul>
-                            <li><a href="#">Espuma de afeitar</a></li>
-                            <li><a href="#">Navajas</a></li>
-                            <li><a href="#">Aceite para barba</a></li>
-                            <li><a href="#">Aftershave</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Espuma de afeitar">Espuma de afeitar</a></li>
+                            <li><a href="#" aria-label="Navajas">Navajas</a></li>
+                            <li><a href="#" aria-label="Aceite para barba">Aceite para barba</a></li>
+                            <li><a href="#" aria-label="Aftershave">Aftershave</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128187;</div>
-                <span>Electrónica y Tecnología de Consumo</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128187;</div>
+                    <span>Electrónica y Tecnología de Consumo</span>
+                </div>
+
+                <ul class="lista-subcategorias">
                     <li>Teléfonos y Accesorios
-                        <ul>
-                            <li><a href="#">Smartphones</a></li>
-                            <li><a href="#">Cables USB</a></li>
-                            <li><a href="#">Cargadores</a></li>
-                            <li><a href="#">Protectores y fundas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Smartphones">Smartphones</a></li>
+                            <li><a href="#" aria-label="Cables USB">Cables USB</a></li>
+                            <li><a href="#" aria-label="Cargadores">Cargadores</a></li>
+                            <li><a href="#" aria-label="Protectores y fundas">Protectores y fundas</a></li>
                         </ul>
                     </li>
                     <li>Computadoras, Tablets y Periféricos
-                        <ul>
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="#">Teclados</a></li>
-                            <li><a href="#">Mouse</a></li>
-                            <li><a href="#">Monitores</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Laptops">Laptops</a></li>
+                            <li><a href="#" aria-label="Teclados">Teclados</a></li>
+                            <li><a href="#" aria-label="Mouse">Mouse</a></li>
+                            <li><a href="#" aria-label="Monitores">Monitores</a></li>
                         </ul>
                     </li>
                     <li>Audio y Video
-                        <ul>
-                            <li><a href="#">Auriculares</a></li>
-                            <li><a href="#">Parlantes bluetooth</a></li>
-                            <li><a href="#">Micrófonos</a></li>
-                            <li><a href="#">Equipos de sonido</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Auriculares">Auriculares</a></li>
+                            <li><a href="#" aria-label="Parlantes bluetooth">Parlantes bluetooth</a></li>
+                            <li><a href="#" aria-label="Micrófonos">Micrófonos</a></li>
+                            <li><a href="#" aria-label="Equipos de sonido">Equipos de sonido</a></li>
                         </ul>
                     </li>
                     <li>Seguridad Electrónica
-                        <ul>
-                            <li><a href="#">Cámaras CCTV</a></li>
-                            <li><a href="#">Alarmas</a></li>
-                            <li><a href="#">Sensores de movimiento</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cámaras CCTV">Cámaras CCTV</a></li>
+                            <li><a href="#" aria-label="Alarmas">Alarmas</a></li>
+                            <li><a href="#" aria-label="Sensores de movimiento">Sensores de movimiento</a></li>
                         </ul>
                     </li>
                     <li>Pequeños Electrodomésticos
-                        <ul>
-                            <li><a href="#">Licuadoras</a></li>
-                            <li><a href="#">Batidoras</a></li>
-                            <li><a href="#">Hervidores</a></li>
-                            <li><a href="#">Ventiladores</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Licuadoras">Licuadoras</a></li>
+                            <li><a href="#" aria-label="Batidoras">Batidoras</a></li>
+                            <li><a href="#" aria-label="Hervidores">Hervidores</a></li>
+                            <li><a href="#" aria-label="Ventiladores">Ventiladores</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128085;</div>
-                <span>Moda, Calzado y Textil</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128085;</div>
+                    <span>Moda, Calzado y Textil</span>
+                </div>
+
+                <ul class="lista-subcategorias">
                     <li>Ropa
-                        <ul>
-                            <li><a href="#">Poleras</a></li>
-                            <li><a href="#">Pantalones</a></li>
-                            <li><a href="#">Casacas</a></li>
-                            <li><a href="#">Ropa interior</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Poleras">Poleras</a></li>
+                            <li><a href="#" aria-label="Pantalones">Pantalones</a></li>
+                            <li><a href="#" aria-label="Casacas">Casacas</a></li>
+                            <li><a href="#" aria-label="Ropa interior">Ropa interior</a></li>
                         </ul>
                     </li>
                     <li>Calzado
-                        <ul>
-                            <li><a href="#">Zapatillas</a></li>
-                            <li><a href="#">Botines</a></li>
-                            <li><a href="#">Sandalias</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Zapatillas">Zapatillas</a></li>
+                            <li><a href="#" aria-label="Botines">Botines</a></li>
+                            <li><a href="#" aria-label="Sandalias">Sandalias</a></li>
                         </ul>
                     </li>
                     <li>Accesorios
-                        <ul>
-                            <li><a href="#">Mochilas</a></li>
-                            <li><a href="#">Carteras</a></li>
-                            <li><a href="#">Cinturones</a></li>
-                            <li><a href="#">Gorras</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Mochilas">Mochilas</a></li>
+                            <li><a href="#" aria-label="Carteras">Carteras</a></li>
+                            <li><a href="#" aria-label="Cinturones">Cinturones</a></li>
+                            <li><a href="#" aria-label="Gorras">Gorras</a></li>
                         </ul>
                     </li>
                     <li>Uniformes y Textiles
-                        <ul>
-                            <li><a href="#">Uniformes escolares</a></li>
-                            <li><a href="#">Ropa de trabajo</a></li>
-                            <li><a href="#">Telas por metro</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Uniformes escolares">Uniformes escolares</a></li>
+                            <li><a href="#" aria-label="Ropa de trabajo">Ropa de trabajo</a></li>
+                            <li><a href="#" aria-label="Telas por metro">Telas por metro</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#127922;</div>
-                <span>Juguetes y Artículos Infantiles</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#127922;</div>
+                    <span>Juguetes y Artículos Infantiles</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Juguetes Educativos y Electrónicos
-                        <ul>
-                            <li><a href="#">Tablets para niños</a></li>
-                            <li><a href="#">Robots educativos</a></li>
-                            <li><a href="#">Juegos interactivos</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Tablets para niños">Tablets para niños</a></li>
+                            <li><a href="#" aria-label="Robots educativos">Robots educativos</a></li>
+                            <li><a href="#" aria-label="Juegos interactivos">Juegos interactivos</a></li>
                         </ul>
                     </li>
                     <li>Juegos de Mesa
-                        <ul>
-                            <li><a href="#">Rompecabezas</a></li>
-                            <li><a href="#">Damas, ajedrez</a></li>
-                            <li><a href="#">Juegos de cartas</a></li>
-                        </ul>
-                    </li>
-                    <li>Vehículos Infantiles
-                        <ul>
-                            <li><a href="#">Bicicletas</a></li>
-                            <li><a href="#">Scooters</a></li>
-                            <li><a href="#">Auto eléctricos</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Rompecabezas">Rompecabezas</a></li>
+                            <li><a href="#" aria-label="Damas, ajedrez">Damas, ajedrez</a></li>
+                            <li><a href="#" aria-label="Juegos de cartas">Juegos de cartas</a></li>
                         </ul>
                     </li>
                     <li>Bebés
-                        <ul>
-                            <li><a href="#">Pañales</a></li>
-                            <li><a href="#">Mamaderas</a></li>
-                            <li><a href="#">Sillas de comer</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Pañales">Pañales</a></li>
+                            <li><a href="#" aria-label="Mamaderas">Mamaderas</a></li>
+                            <li><a href="#" aria-label="Sillas de comer">Sillas de comer</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128736;</div>
-                <span>Ferretería, Construcción y Herramientas</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128736;</div>
+                    <span>Ferretería, Construcción y Herramientas</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Herramientas
-                        <ul>
-                            <li><a href="#">Martillos</a></li>
-                            <li><a href="#">Taladros</a></li>
-                            <li><a href="#">Llaves</a></li>
-                            <li><a href="#">Destornilladores</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Martillos">Martillos</a></li>
+                            <li><a href="#" aria-label="Taladros">Taladros</a></li>
+                            <li><a href="#" aria-label="Llaves">Llaves</a></li>
+                            <li><a href="#" aria-label="Destornilladores">Destornilladores</a></li>
                         </ul>
                     </li>
                     <li>Construcción
-                        <ul>
-                            <li><a href="#">Cemento</a></li>
-                            <li><a href="#">Yeso</a></li>
-                            <li><a href="#">Pinturas</a></li>
-                            <li><a href="#">Tubos PVC</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cemento">Cemento</a></li>
+                            <li><a href="#" aria-label="Yeso">Yeso</a></li>
+                            <li><a href="#" aria-label="Pinturas">Pinturas</a></li>
+                            <li><a href="#" aria-label="Tubos PVC">Tubos PVC</a></li>
                         </ul>
                     </li>
                     <li>Seguridad Industrial
-                        <ul>
-                            <li><a href="#">Cascos</a></li>
-                            <li><a href="#">Chalecos</a></li>
-                            <li><a href="#">Guantes anticorte</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cascos">Cascos</a></li>
+                            <li><a href="#" aria-label="Chalecos">Chalecos</a></li>
+                            <li><a href="#" aria-label="Guantes anticorte">Guantes anticorte</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128663;</div>
-                <span>Automotriz</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128663;</div>
+                    <span>Automotriz</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Repuestos
-                        <ul>
-                            <li><a href="#">Filtros</a></li>
-                            <li><a href="#">Baterías</a></li>
-                            <li><a href="#">Pastillas de freno</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Filtros">Filtros</a></li>
+                            <li><a href="#" aria-label="Baterías">Baterías</a></li>
+                            <li><a href="#" aria-label="Pastillas de freno">Pastillas de freno</a></li>
                         </ul>
                     </li>
                     <li>Lubricantes y Aditivos
-                        <ul>
-                            <li><a href="#">Aceites</a></li>
-                            <li><a href="#">Refrigerantes</a></li>
-                            <li><a href="#">Limpiainyectores</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Aceites">Aceites</a></li>
+                            <li><a href="#" aria-label="Refrigerantes">Refrigerantes</a></li>
+                            <li><a href="#" aria-label="Limpiainyectores">Limpiainyectores</a></li>
                         </ul>
                     </li>
                     <li>Accesorios
-                        <ul>
-                            <li><a href="#">Cubre asientos</a></li>
-                            <li><a href="#">Alfombras</a></li>
-                            <li><a href="#">Limpiaparabrisas</a></li>
-                        </ul>
-                    </li>
-                    <li>Taller
-                        <ul>
-                            <li><a href="#">Compresores</a></li>
-                            <li><a href="#">Herramientas neumáticas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cubre asientos">Cubre asientos</a></li>
+                            <li><a href="#" aria-label="Alfombras">Alfombras</a></li>
+                            <li><a href="#" aria-label="Limpiaparabrisas">Limpiaparabrisas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#129505;</div>
-                <span>Salud, Farmacia y Médico</span>
-                <ul>
-                    <li>OTC
-                        <ul>
-                            <li><a href="#">Analgésicos</a></li>
-                            <li><a href="#">Vitaminas</a></li>
-                            <li><a href="#">Antigripales</a></li>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#129505;</div>
+                    <span>Salud, Farmacia y Médico</span>
+                </div>
+                <ul class="lista-subcategorias">
+                    <li>OTC (Venta Libre)
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Analgésicos">Analgésicos</a></li>
+                            <li><a href="#" aria-label="Vitaminas">Vitaminas</a></li>
+                            <li><a href="#" aria-label="Antigripales">Antigripales</a></li>
                         </ul>
                     </li>
                     <li>Insumos Médicos
-                        <ul>
-                            <li><a href="#">Guantes</a></li>
-                            <li><a href="#">Mascarillas</a></li>
-                            <li><a href="#">Termómetros</a></li>
-                            <li><a href="#">Oxímetros</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Guantes">Guantes</a></li>
+                            <li><a href="#" aria-label="Mascarillas">Mascarillas</a></li>
+                            <li><a href="#" aria-label="Termómetros">Termómetros</a></li>
                         </ul>
                     </li>
                     <li>Equipos Básicos
-                        <ul>
-                            <li><a href="#">Tensiómetros</a></li>
-                            <li><a href="#">Nebulizadores</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Tensiómetros">Tensiómetros</a></li>
+                            <li><a href="#" aria-label="Nebulizadores">Nebulizadores</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#9999;</div>
-                <span>Oficina y Papelería</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#9999;</div>
+                    <span>Oficina y Papelería</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Papelería
-                        <ul>
-                            <li><a href="#">Cuadernos</a></li>
-                            <li><a href="#">Hojas bond</a></li>
-                            <li><a href="#">Lápices y lapiceros</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cuadernos">Cuadernos</a></li>
+                            <li><a href="#" aria-label="Hojas bond">Hojas bond</a></li>
+                            <li><a href="#" aria-label="Lápices y lapiceros">Lápices y lapiceros</a></li>
                         </ul>
                     </li>
                     <li>Impresión
-                        <ul>
-                            <li><a href="#">Tóner</a></li>
-                            <li><a href="#">Tintas</a></li>
-                            <li><a href="#">Impresoras</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Tóner">Tóner</a></li>
+                            <li><a href="#" aria-label="Tintas">Tintas</a></li>
+                            <li><a href="#" aria-label="Impresoras">Impresoras</a></li>
                         </ul>
                     </li>
                     <li>Organización
-                        <ul>
-                            <li><a href="#">Archivadores</a></li>
-                            <li><a href="#">Carpetas</a></li>
-                            <li><a href="#">Mesas de oficina</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Archivadores">Archivadores</a></li>
+                            <li><a href="#" aria-label="Carpetas">Carpetas</a></li>
+                            <li><a href="#" aria-label="Mesas de oficina">Mesas de oficina</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128717;</div>
-                <span>Hogar, Decoración y Menaje</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128717;</div>
+                    <span>Hogar, Decoración y Menaje</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Muebles
-                        <ul>
-                            <li><a href="#">Mesas</a></li>
-                            <li><a href="#">Sillas</a></li>
-                            <li><a href="#">Sofás</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Mesas">Mesas</a></li>
+                            <li><a href="#" aria-label="Sillas">Sillas</a></li>
+                            <li><a href="#" aria-label="Sofás">Sofás</a></li>
                         </ul>
                     </li>
                     <li>Utensilios de Cocina
-                        <ul>
-                            <li><a href="#">Ollas</a></li>
-                            <li><a href="#">Sartenes</a></li>
-                            <li><a href="#">Cubiertos</a></li>
-                            <li><a href="#">Vajillas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Ollas">Ollas</a></li>
+                            <li><a href="#" aria-label="Sartenes">Sartenes</a></li>
+                            <li><a href="#" aria-label="Cubiertos">Cubiertos</a></li>
                         </ul>
                     </li>
                     <li>Decoración
-                        <ul>
-                            <li><a href="#">Cuadros</a></li>
-                            <li><a href="#">Lámparas</a></li>
-                            <li><a href="#">Alfombras</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cuadros">Cuadros</a></li>
+                            <li><a href="#" aria-label="Lámparas">Lámparas</a></li>
+                            <li><a href="#" aria-label="Alfombras">Alfombras</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128737;</div>
-                <span>Seguridad y Protección</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128737;</div>
+                    <span>Seguridad y Protección</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Contra Incendios
-                        <ul>
-                            <li><a href="#">Extintores</a></li>
-                            <li><a href="#">Detectores de humo</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Extintores">Extintores</a></li>
+                            <li><a href="#" aria-label="Detectores de humo">Detectores de humo</a></li>
                         </ul>
                     </li>
                     <li>EPP (Equipo de Protección Personal)
-                        <ul>
-                            <li><a href="#">Cascos</a></li>
-                            <li><a href="#">Guantes</a></li>
-                            <li><a href="#">Botas industriales</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cascos">Cascos</a></li>
+                            <li><a href="#" aria-label="Guantes">Guantes</a></li>
+                            <li><a href="#" aria-label="Botas industriales">Botas industriales</a></li>
                         </ul>
                     </li>
                     <li>Sistemas de Seguridad
-                        <ul>
-                            <li><a href="#">Cámaras</a></li>
-                            <li><a href="#">Alarmas</a></li>
-                            <li><a href="#">Cerraduras electrónicas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cámaras">Cámaras</a></li>
+                            <li><a href="#" aria-label="Alarmas">Alarmas</a></li>
+                            <li><a href="#" aria-label="Cerraduras electrónicas">Cerraduras electrónicas</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#127881;</div>
-                <span>Eventos, Fiestas y Decoración</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#127881;</div>
+                    <span>Eventos, Fiestas y Decoración</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Artículos de Fiesta
-                        <ul>
-                            <li><a href="#">Globos</a></li>
-                            <li><a href="#">Serpentinas</a></li>
-                            <li><a href="#">Velas de cumpleaños</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Globos">Globos</a></li>
+                            <li><a href="#" aria-label="Serpentinas">Serpentinas</a></li>
+                            <li><a href="#" aria-label="Velas de cumpleaños">Velas de cumpleaños</a></li>
                         </ul>
                     </li>
                     <li>Decoración Temática
-                        <ul>
-                            <li><a href="#">Cumpleaños</a></li>
-                            <li><a href="#">Matrimonios</a></li>
-                            <li><a href="#">Graduaciones</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Cumpleaños">Cumpleaños</a></li>
+                            <li><a href="#" aria-label="Matrimonios">Matrimonios</a></li>
                         </ul>
                     </li>
                     <li>Iluminación
-                        <ul>
-                            <li><a href="#">Luces LED</a></li>
-                            <li><a href="#">Guirnaldas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Luces LED">Luces LED</a></li>
+                            <li><a href="#" aria-label="Guirnaldas">Guirnaldas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#127793;</div>
-                <span>Agroindustrial y Agricultura</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#127793;</div>
+                    <span>Agroindustrial y Agricultura</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Insumos
-                        <ul>
-                            <li><a href="#">Fertilizantes</a></li>
-                            <li><a href="#">Semillas</a></li>
-                            <li><a href="#">Plaguicidas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Fertilizantes">Fertilizantes</a></li>
+                            <li><a href="#" aria-label="Semillas">Semillas</a></li>
+                            <li><a href="#" aria-label="Plaguicidas">Plaguicidas</a></li>
                         </ul>
                     </li>
                     <li>Maquinaria
-                        <ul>
-                            <li><a href="#">Tractores</a></li>
-                            <li><a href="#">Motoazadas</a></li>
-                            <li><a href="#">Motobombas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Tractores">Tractores</a></li>
+                            <li><a href="#" aria-label="Motoazadas">Motoazadas</a></li>
+                            <li><a href="#" aria-label="Motobombas">Motobombas</a></li>
                         </ul>
                     </li>
                     <li>Ganadería
-                        <ul>
-                            <li><a href="#">Alimentos para animales</a></li>
-                            <li><a href="#">Bebederos</a></li>
-                            <li><a href="#">Vitaminas para ganado</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Alimentos para animales">Alimentos para animales</a>
+                            </li>
+                            <li><a href="#" aria-label="Bebederos">Bebederos</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128054;</div>
-                <span>Mascotas</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128054;</div>
+                    <span>Mascotas</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Alimentos
-                        <ul>
-                            <li><a href="#">Perros</a></li>
-                            <li><a href="#">Gatos</a></li>
-                            <li><a href="#">Aves</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Perros">Perros</a></li>
+                            <li><a href="#" aria-label="Gatos">Gatos</a></li>
+                            <li><a href="#" aria-label="Aves">Aves</a></li>
                         </ul>
                     </li>
                     <li>Accesorios
-                        <ul>
-                            <li><a href="#">Correas</a></li>
-                            <li><a href="#">Camas</a></li>
-                            <li><a href="#">Juguetes</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Correas">Correas</a></li>
+                            <li><a href="#" aria-label="Camas">Camas</a></li>
+                            <li><a href="#" aria-label="Juguetes">Juguetes</a></li>
                         </ul>
                     </li>
                     <li>Cuidado e Higiene
-                        <ul>
-                            <li><a href="#">Shampoo</a></li>
-                            <li><a href="#">Antipulgas</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Shampoo">Shampoo</a></li>
+                            <li><a href="#" aria-label="Antipulgas">Antipulgas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div>
-                <div>&#128719;</div>
-                <span>Muebles y Electrodomésticos Grandes</span>
-                <ul>
+            <div class="tarjeta-categoria">
+                <div class="encabezado-categoria">
+                    <div>&#128719;</div>
+                    <span>Muebles y Electrodomésticos Grandes</span>
+                </div>
+                <ul class="lista-subcategorias">
                     <li>Electrodomésticos
-                        <ul>
-                            <li><a href="#">Refrigeradores</a></li>
-                            <li><a href="#">Lavadoras</a></li>
-                            <li><a href="#">Cocinas</a></li>
-                            <li><a href="#">Hornos</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Refrigeradores">Refrigeradores</a></li>
+                            <li><a href="#" aria-label="Lavadoras">Lavadoras</a></li>
+                            <li><a href="#" aria-label="Cocinas">Cocinas</a></li>
+                            <li><a href="#" aria-label="Hornos">Hornos</a></li>
                         </ul>
                     </li>
                     <li>Muebles Grandes
-                        <ul>
-                            <li><a href="#">Juegos de living</a></li>
-                            <li><a href="#">Comedores</a></li>
-                            <li><a href="#">Colchones</a></li>
-                            <li><a href="#">Roperos</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Juegos de living">Juegos de living</a></li>
+                            <li><a href="#" aria-label="Comedores">Comedores</a></li>
+                            <li><a href="#" aria-label="Colchones">Colchones</a></li>
                         </ul>
                     </li>
                     <li>Climatización
-                        <ul>
-                            <li><a href="#">Aires acondicionados</a></li>
-                            <li><a href="#">Calefactores</a></li>
+                        <ul class="lista-enlaces">
+                            <li><a href="#" aria-label="Aires acondicionados">Aires acondicionados</a></li>
+                            <li><a href="#" aria-label="Calefactores">Calefactores</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
+
     </main>
 
     <hr>
 
-    <footer>
-        <div>
-            <div>
+    <footer class="pie-pagina">
+        <div class="contenido-pie">
+            <div class="columna-suscripcion">
                 <h3>EmprendeHub</h3>
-                <div>
-                    <input type="email" placeholder="Ingresa tu Email">
-                    <button>Suscribir</button>
+                <div class="form-suscripcion">
+                    <input type="email" placeholder="Ingresa tu Email" class="campo-email">
+                    <button class="boton-secundario">Suscribir</button>
                 </div>
             </div>
-            <div>
+            <div class="columna-enlaces">
                 <h4>Enlaces rápidos</h4>
                 <ul>
                     <li><a href="#">Inicio</a></li>
@@ -666,7 +700,7 @@
                     <li><a href="#">Buscar</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="columna-contacto">
                 <h4>Para distribuidoras</h4>
                 <ul>
                     <li><a href="#"> Registrar negocio</a></li>
@@ -675,7 +709,7 @@
                 <p>&#9990; WhatsApp de soporte: +591 70000000</p>
                 <p>&#9993; Email: contacto@EmprendeHub .com</p>
             </div>
-            <div>
+            <div class="columna-legal">
                 <h4>Legal</h4>
                 <ul>
                     <li><a href="#"> Términos y condiciones</a></li>
@@ -683,7 +717,7 @@
                 </ul>
             </div>
         </div>
-        <div>
+        <div class="derechos-reservados">
             <p>&copy; 2025 EmprendeHub.Todos los derechos reservados.</p>
         </div>
     </footer>
