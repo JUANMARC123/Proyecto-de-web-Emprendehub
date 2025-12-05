@@ -442,11 +442,7 @@
  }
 
 
- /* ============================================= */
- /* ANIMACIONES SUAVES Y MODERNAS                 */
- /* ============================================= */
 
- /* 1. Fade-in suave al cargar los elementos (ideal para todo el artículo) */
  @keyframes fadeInUp {
      from {
          opacity: 0;
@@ -462,10 +458,10 @@
  .articulo-perfil>* {
      animation: fadeInUp 0.7s ease-out forwards;
      opacity: 0;
-     /* se activa con JS o con un pequeño retraso, ver más abajo */
+
  }
 
- /* Retraso escalonado para que aparezcan uno tras otro */
+
  .columna-izquierda {
      animation-delay: 0.1s;
  }
@@ -478,7 +474,7 @@
      animation-delay: 0.3s;
  }
 
- /* 2. Logo en la cabecera con pequeño "bounce" al pasar el ratón */
+
  .logo-empresa-cabecera {
      transition: transform 0.3s ease;
  }
@@ -499,7 +495,7 @@
      }
  }
 
- /* 3. Efecto hover bonito en los botones */
+
  .boton-whatsapp,
  .boton-compartir {
      transition: all 0.3s ease;
@@ -519,7 +515,7 @@
      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
  }
 
- /* 4. Galería con scroll suave y efecto al pasar por cada imagen */
+
  .galeria-productos {
      scroll-behavior: smooth;
  }
@@ -535,7 +531,7 @@
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
  }
 
- /* 5. Entrada suave del título del perfil y categoría */
+
  .perfil-header .nombre-distribuidora {
      animation: slideInLeft 0.8s ease-out forwards;
      opacity: 0;
@@ -560,7 +556,7 @@
      }
  }
 
- /* 6. Efecto "pulse" sutil en el botón de WhatsApp para llamar la atención */
+
  @keyframes pulse {
      0% {
          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
@@ -583,7 +579,7 @@
      animation: pulse 2.5s infinite ease-out;
  }
 
- /* 7. Mapa con pequeño efecto de "zoom" al hacer hover (opcional) */
+
  .contenedor-mapa {
      transition: transform 0.5s ease;
  }
@@ -592,7 +588,7 @@
      transform: scale(1.03);
  }
 
- /* 8. Para activar las animaciones fadeInUp sin JavaScript (truco con :target o simplemente al cargar) */
+
  body {
      animation: fadeInBody 0.6s ease-out forwards;
  }
@@ -607,8 +603,6 @@
      }
  }
 
- /* Opcional: si quieres que todo aparezca al hacer scroll (Intersection Observer), 
-   pero con puro CSS puedes usar este truco de retraso: */
  .columna-izquierda,
  .seccion-contacto,
  .contenedor-mapa {

@@ -350,11 +350,9 @@ figcaption {
 }
 
 
-/* ============================================= */
-/* ANIMACIONES BONITAS Y SUTILes (2025 style)    */
-/* ============================================= */
 
-/* 1. Entrada progresiva de las tarjetas al cargar o hacer scroll */
+
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -371,10 +369,10 @@ figcaption {
     opacity: 0;
     animation: fadeInUp 0.7s ease-out forwards;
     animation-delay: calc(var(--i) * 0.1s);
-    /* efecto cascada */
+
 }
 
-/* Si no usas JS, este truco hace que aparezcan escalonadas al cargar */
+
 .lista-resultados {
     display: flex;
     flex-direction: column;
@@ -421,7 +419,7 @@ figcaption {
     --i: 10;
 }
 
-/* 2. Logo del header con pequeño bounce al hover */
+
 .logo-sitio {
     transition: transform 0.4s ease;
 }
@@ -442,7 +440,7 @@ figcaption {
     }
 }
 
-/* 3. Botones con elevación suave al hover */
+
 .boton-detalles,
 .boton-whatsapp,
 .boton-abierto,
@@ -460,12 +458,12 @@ figcaption {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Extra: botón de detalles azul más vivo */
+
 .boton-detalles:hover {
     background-color: #2b6cb0;
 }
 
-/* 4. Selects y filtros con efecto suave */
+
 select,
 .filtros-busqueda input,
 .filtros-busqueda button {
@@ -479,7 +477,7 @@ select:focus,
     outline: none;
 }
 
-/* 5. Efecto "pulse" muy sutil en el botón de WhatsApp para destacar */
+
 @keyframes pulseWhatsApp {
     0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
@@ -512,7 +510,7 @@ select:focus,
     animation: pulseWhatsApp 2.5s infinite ease-out;
 }
 
-/* 6. Tarjeta completa con leve escala al hover (muy elegante) */
+
 .tarjeta-distribuidora {
     transition: all 0.4s ease;
     border: 1px solid #e2e8f0;
@@ -524,7 +522,7 @@ select:focus,
     border-color: #bee3db;
 }
 
-/* 7. Logo de empresa dentro de la tarjeta con brillo sutil */
+
 .logo-empresa {
     transition: all 0.4s ease;
 }
@@ -534,7 +532,7 @@ select:focus,
     box-shadow: 0 8px 20px rgba(79, 209, 197, 0.3);
 }
 
-/* 8. Zoom suave en botones de mapa */
+
 .zoom-mas,
 .zoom-menos {
     transition: all 0.3s ease;
@@ -548,7 +546,7 @@ select:focus,
     transform: scale(1.15);
 }
 
-/* 9. Cabecera con entrada suave al cargar la página */
+
 .cabecera-principal {
     animation: slideDown 0.8s ease-out;
 }
@@ -566,7 +564,7 @@ select:focus,
 }
 
 
-/* 10. Bonus: efecto ripple en todos los botones (moderno y limpio) */
+
 button,
 .boton-detalles,
 .boton-whatsapp,

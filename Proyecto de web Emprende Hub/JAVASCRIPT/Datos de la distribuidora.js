@@ -40,38 +40,6 @@ function initMapaReal() {
 // Iniciar mapa cuando cargue la página
 window.onload = initMapaReal;
 
-const datosDistribuidora = {
-    nombre: "Distribuidora El Sol",
-    categoria: "Bebidas y Licores",
-    logo: "../IMAGENES/distribuidoras/el-sol-logo.jpg",
-    fotos: [
-        "../IMAGENES/distribuidoras/el-sol-1.jpg",
-        "../IMAGENES/distribuidoras/el-sol-2.jpg",
-        "../IMAGENES/distribuidoras/el-sol-3.jpg"
-    ],
-    descripcion: `Somos una distribuidora mayorista con más de 15 años de experiencia en La Paz - Bolivia. 
-    Ofrecemos las mejores marcas de bebidas nacionales e importadas a precios muy competitivos. 
-    Entregas rápidas en toda la ciudad y el altiplano.`,
-    productosPopulares: [
-        "Coca Cola 3L",
-        "Paceña Imperial 1L",
-        "Singani San Pedro",
-        "Energizante Red Bull"
-    ],
-    direccion: "Av. Ballivián #1234, Calacoto, La Paz - Bolivia",
-    horario: {
-        lunesViernes: "08:00 - 19:00",
-        sabado: "08:00 - 14:00",
-        domingo: "Cerrado"
-    },
-    telefonos: ["+591 77712345", "+591 22267890"],
-    whatsapp: "59177712345", // solo números, sin + ni guiones
-    coordenadas: {
-        lat: -16.5405,
-        lng: -68.0845
-    }
-};
-
 // =============================
 // Cargar todos los datos en la página
 // =============================

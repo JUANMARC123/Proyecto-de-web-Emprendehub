@@ -631,7 +631,7 @@ body {
     animation-delay: 0.5s;
 }
 
-/* 7. Enlaces de teléfono y compartir: subrayado animado */
+
 .enlace-telefono,
 .boton-compartir {
     position: relative;
@@ -660,8 +660,7 @@ body {
     color: #40E0D0;
 }
 
-/* 8. Cabecera: entrada suave al hacer scroll (opcional con JS) */
-/* Si usas scroll, puedes activar esta clase con JavaScript */
+
 .header-scrolled {
     animation: slideDown 0.5s ease-out;
 }
