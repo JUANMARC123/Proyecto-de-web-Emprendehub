@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EmprendeHub - Distribuidoras</title>
-    <link rel="stylesheet" href="estilos-Distribuidoras.css">
+    <link rel="stylesheet" href="../CSS/estilos-Distribuidoras.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi7iFNC3cGHMxbw1FUi0mMuEsB0vzmxw4"></script>
 </head>
 
 <body>
 
     <header class="cabecera-principal">
         <div>
-            <img src="URL_DEL_LOGO_EMPRENDEHUB.png" alt="Logo de EmprendeHub" class="logo-sitio">
+            <img src="../IMAGENES/logo de emprende hub.png" alt="Logo de EmprendeHub" class="logo-sitio">
             <h1>EmprendeHub</h1>
         </div>
         <hr>
@@ -115,49 +116,49 @@
             <h2>Resultados (4)</h2>
 
             <article class="tarjeta-distribuidora">
-                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <img src="../IMAGENES/importadora campero.png" alt="logo de Importadora Campero" class="logo-empresa">
                 <div class="detalles-empresa">
-                    <h3>Nombre de la Empresa</h3>
-                    <p>Categoría</p>
-                    <p>Zona</p>
-                    <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
-                    <p>Productos: Producto 1, Producto 2, Producto 3</p>
+                    <h3>IMPORTADORA CAMPERO S.R.L.</h3>
+                    <p>Materiales de Construcción</p>
+                    <p>Zona: Av. 6 de Marzo (Eje principal)</p>
+                    <p>Tipo de Distribuidor: Importadora/Distribuidora Mayorista</p>
+                    <p>Productos: Cemento, Fierro, Cerámica, Ladrillo, Agregados</p>
                 </div>
                 <button class="boton-detalles">Ver detalles</button>
             </article>
 
             <article class="tarjeta-distribuidora">
-                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <img src="../IMAGENES/incer srl.jpeg" alt="logo de INCER G.A.L.B." class="logo-empresa">
                 <div class="detalles-empresa">
-                    <h3>Nombre de la Empresa</h3>
-                    <p>Categoría</p>
-                    <p>Zona</p>
-                    <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
-                    <p>Productos: Producto 1, Producto 2, Producto 3</p>
+                    <h3>INCER – G.A.L.B. S.R.L.</h3>
+                    <p>Materiales de Construcción</p>
+                    <p>Zona: Avenida Cívica (Santiago 1)</p>
+                    <p>Tipo de Distribuidor: Agencia de Venta/Distribuidora</p>
+                    <p>Productos: Materiales de obra gruesa y fina, Revestimientos, Tuberías</p>
                 </div>
                 <button class="boton-detalles">Ver detalles</button>
             </article>
 
             <article class="tarjeta-distribuidora">
-                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <img src="../IMAGENES/ica-logo.png" alt="logo de ICA" class="logo-empresa">
                 <div class="detalles-empresa">
-                    <h3>Nombre de la Empresa</h3>
-                    <p>Categoría</p>
-                    <p>Zona</p>
-                    <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
-                    <p>Productos: Producto 1, Producto 2, Producto 3</p>
+                    <h3>INDUSTRIAS DEL CAUCHO APARRE S.R.L. (ICA)</h3>
+                    <p>Suministros Industriales</p>
+                    <p>Zona: Alto de la Alianza (Camino a Viacha Km2)</p>
+                    <p>Tipo de Distribuidor: Industria/Distribuidora Especializada</p>
+                    <p>Productos: Productos de goma, Bandas transportadoras, Mangueras industriales, Empaques</p>
                 </div>
                 <button class="boton-detalles">Ver detalles</button>
             </article>
 
             <article class="tarjeta-distribuidora">
-                <img src="URL_DEL_LOGO" alt="logo" class="logo-empresa">
+                <img src="../IMAGENES/carpiteria.jpeg" alt="logo de Bolivian Timberland" class="logo-empresa">
                 <div class="detalles-empresa">
-                    <h3>Nombre de la Empresa</h3>
-                    <p>Categoría</p>
-                    <p>Zona</p>
-                    <p>Tipo de Distribuidor: Distribuidor/Agencia/Importadora</p>
-                    <p>Productos: Producto 1, Producto 2, Producto 3</p>
+                    <h3>BOLIVIAN TIMBERLAND</h3>
+                    <p>Carpintería y Maderas</p>
+                    <p>Zona: San Juan (Carretera a Viacha)</p>
+                    <p>Tipo de Distribuidor: Carpintería Industrial/Distribuidora</p>
+                    <p>Productos: Puertas, Marcos, Pisos flotantes, Madera aserrada, Melamina</p>
                 </div>
                 <button class="boton-detalles">Ver detalles</button>
             </article>
@@ -165,11 +166,13 @@
 
         <section class="mapa-ubicacion">
             <div class="contenedor-mapa">
-                <figure>
-                    <img src="mapa-simulado.png" alt="Mapa de la ubicación de la empresa" class="imagen-mapa">
+                <figure id="mapaFigure">
+                    <div id="mapaReal" data-coordenadas="-16.513,-68.169"></div>
+
                     <figcaption>Ubicación aproximada</figcaption>
-                    <button class="zoom-mas">+</button>
-                    <button class="zoom-menos">-</button>
+
+                    <button class="zoom-control" id="zoomMas">+</button>
+                    <button class="zoom-control" id="zoomMenos">-</button>
                 </figure>
             </div>
         </section>
@@ -187,8 +190,8 @@
             <div class="columna-enlaces">
                 <h4>Enlaces rápidos</h4>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Categorías</a></li>
+                    <li><a href="../HTML/Inicio.html">Inicio</a></li>
+                    <li><a href="../HTML/Categoria.html">Categorías</a></li>
                     <li><a href="#">Buscar</a></li>
                 </ul>
             </div>
@@ -213,6 +216,11 @@
             <p>&copy; 2025 EmprendeHub.Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="../JAVASCRIPT/Distribuidor.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi7iFNC3cGHMxbw1FUi0mMuEsB0vzmxw4&callback=initMap"
+        async defer></script>
+
 
 </body>
 

@@ -248,62 +248,155 @@
      font-size: 1.2rem;
  }
 
+ /* Bloque CSS para el botón de Suscripción en el Footer */
+ .boton-secundario {
+     /* Color de fondo: Usamos el color primario del sitio (cian/turquesa) */
+     background-color: #4FD1C5;
+
+     /* Color del texto: Blanco para contrastar con el fondo */
+     color: white;
+
+     /* Eliminar el borde */
+     border: none;
+
+     /* Espaciado interno */
+     padding: 0.5rem 1rem;
+
+     /* Esquinas redondeadas */
+     border-radius: 0.25rem;
+
+     /* Asegurar que el cursor cambie para indicar que es interactivo */
+     cursor: pointer;
+
+     /* Transición suave para el efecto hover */
+     transition: background-color 0.2s ease-in-out;
+ }
+
+ /* Efecto al pasar el ratón (Hover) */
+ .boton-secundario:hover {
+     /* Un tono un poco más oscuro o vibrante del cian para el efecto visual */
+     background-color: #38b2ac;
+     /* Tono de cian más oscuro */
+ }
+
+ /* Estilo adicional para el campo de email para mejor integración visual */
+ .campo-email {
+     padding: 0.5rem;
+     border-radius: 0.25rem;
+     border: none;
+     /* Usamos un color oscuro del pie de página */
+     background: #2d3748;
+     color: white;
+     flex: 1;
+     min-width: 0;
+ }
+
+ .boton-nav.activo,
+ .tarjeta-categoria.seleccionada {
+     background-color: #0055ff;
+     color: white;
+     font-weight: bold;
+ }
+
+ .tarjeta-negocio,
+ .tarjeta-categoria {
+     transition: transform 0.25s ease, box-shadow 0.25s ease;
+ }
+
+ .lista-categorias {
+     display: flex;
+     overflow-x: auto;
+     scroll-behavior: smooth;
+     gap: 16px;
+     padding: 16px 0;
+ }
+
+ /* Ocultar barra de scroll pero mantener funcionalidad */
+ .lista-categorias::-webkit-scrollbar {
+     display: none;
+ }
+
+ .lista-categorias {
+     -ms-overflow-style: none;
+     scrollbar-width: none;
+ }
+
  /* FOOTER */
  .pie-pagina {
-     background-color: #000000;
-     color: #fff;
-     padding: 60px 20px 20px;
-     margin-top: 60px;
+     background-color: #000;
+     color: #cbd5e0;
+     padding: 3rem 2rem;
+     font-size: 0.9rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
  }
 
  .contenido-pie {
-     max-width: 1200px;
-     margin: 0 auto;
-     display: grid;
-     gap: 40px;
- }
-
- .columna-suscripcion h3 {
-     font-family: 'Merriweather', serif;
-     font-size: 1.5rem;
-     margin-bottom: 20px;
- }
-
- .form-suscripcion {
      display: flex;
-     gap: 10px;
+     flex-wrap: wrap;
+     gap: 2rem;
+     justify-content: center;
+     margin-bottom: 2rem;
  }
 
- .campo-email {
-     background: rgba(255, 255, 255, 0.2);
-     border: none;
-     padding: 10px;
-     border-radius: 4px;
+ .pie-pagina h3,
+ .pie-pagina h4 {
      color: white;
+     margin-bottom: 1rem;
+     font-size: 1.1rem;
  }
 
  .pie-pagina ul {
      list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .pie-pagina ul li {
+     margin-bottom: 0.5rem;
  }
 
  .pie-pagina a {
-     color: #ccc;
+     color: #a0aec0;
      text-decoration: none;
-     font-size: 0.9rem;
  }
 
  .pie-pagina a:hover {
-     text-decoration: underline;
+     color: white;
+ }
+
+ .form-suscripcion {
+     display: flex;
+     gap: 0.5rem;
+     justify-content: center;
+ }
+
+ .campo-email {
+     padding: 0.5rem;
+     border-radius: 0.25rem;
+     border: none;
+     background: #2d3748;
+     color: white;
+     flex: 1;
+ }
+
+ .boton-secundario {
+     background-color: #4a5568;
+     color: white;
+     border: none;
+     padding: 0.5rem 1rem;
+     border-radius: 0.25rem;
  }
 
  .derechos-reservados {
-     max-width: 1200px;
-     margin: 40px auto 0;
-     border-top: 1px solid #333;
-     padding-top: 20px;
+     border-top: 1px solid #2d3748;
+     padding-top: 1.5rem;
      text-align: center;
      font-size: 0.8rem;
-     color: #666;
+     color: #718096;
  }
 
  /* RESPONSIVE */
@@ -346,4 +439,182 @@
      .contenido-pie {
          grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
      }
+ }
+
+
+ /* ============================================= */
+ /* ANIMACIONES SUAVES Y MODERNAS                 */
+ /* ============================================= */
+
+ /* 1. Fade-in suave al cargar los elementos (ideal para todo el artículo) */
+ @keyframes fadeInUp {
+     from {
+         opacity: 0;
+         transform: translateY(30px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .articulo-perfil>* {
+     animation: fadeInUp 0.7s ease-out forwards;
+     opacity: 0;
+     /* se activa con JS o con un pequeño retraso, ver más abajo */
+ }
+
+ /* Retraso escalonado para que aparezcan uno tras otro */
+ .columna-izquierda {
+     animation-delay: 0.1s;
+ }
+
+ .seccion-contacto-mapa>.seccion-contacto {
+     animation-delay: 0.2s;
+ }
+
+ .seccion-contacto-mapa>.seccion-mapa {
+     animation-delay: 0.3s;
+ }
+
+ /* 2. Logo en la cabecera con pequeño "bounce" al pasar el ratón */
+ .logo-empresa-cabecera {
+     transition: transform 0.3s ease;
+ }
+
+ .logo-empresa-cabecera:hover {
+     animation: bounceLogo 0.8s ease;
+ }
+
+ @keyframes bounceLogo {
+
+     0%,
+     100% {
+         transform: translateY(0);
+     }
+
+     50% {
+         transform: translateY(-12px);
+     }
+ }
+
+ /* 3. Efecto hover bonito en los botones */
+ .boton-whatsapp,
+ .boton-compartir {
+     transition: all 0.3s ease;
+     transform: translateY(0);
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+
+ .boton-whatsapp:hover {
+     background-color: #20c05a;
+     transform: translateY(-4px);
+     box-shadow: 0 12px 20px rgba(37, 211, 102, 0.35);
+ }
+
+ .boton-compartir:hover {
+     background-color: #f7fafc;
+     transform: translateY(-4px);
+     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+ }
+
+ /* 4. Galería con scroll suave y efecto al pasar por cada imagen */
+ .galeria-productos {
+     scroll-behavior: smooth;
+ }
+
+ .imagen-placeholder {
+     transition: all 0.4s ease;
+     opacity: 0.85;
+ }
+
+ .imagen-placeholder:hover {
+     transform: scale(1.08);
+     opacity: 1;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+ }
+
+ /* 5. Entrada suave del título del perfil y categoría */
+ .perfil-header .nombre-distribuidora {
+     animation: slideInLeft 0.8s ease-out forwards;
+     opacity: 0;
+     animation-delay: 0.3s;
+ }
+
+ .perfil-header .categoria {
+     animation: slideInLeft 0.8s ease-out forwards;
+     opacity: 0;
+     animation-delay: 0.5s;
+ }
+
+ @keyframes slideInLeft {
+     from {
+         opacity: 0;
+         transform: translateX(-40px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+ /* 6. Efecto "pulse" sutil en el botón de WhatsApp para llamar la atención */
+ @keyframes pulse {
+     0% {
+         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+     }
+
+     70% {
+         box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+     }
+
+     100% {
+         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+     }
+ }
+
+ .boton-whatsapp {
+     animation:hover {
+         animation: none;
+     }
+
+     animation: pulse 2.5s infinite ease-out;
+ }
+
+ /* 7. Mapa con pequeño efecto de "zoom" al hacer hover (opcional) */
+ .contenedor-mapa {
+     transition: transform 0.5s ease;
+ }
+
+ .contenedor-mapa:hover {
+     transform: scale(1.03);
+ }
+
+ /* 8. Para activar las animaciones fadeInUp sin JavaScript (truco con :target o simplemente al cargar) */
+ body {
+     animation: fadeInBody 0.6s ease-out forwards;
+ }
+
+ @keyframes fadeInBody {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ /* Opcional: si quieres que todo aparezca al hacer scroll (Intersection Observer), 
+   pero con puro CSS puedes usar este truco de retraso: */
+ .columna-izquierda,
+ .seccion-contacto,
+ .contenedor-mapa {
+     opacity: 0;
+     animation-fill-mode: forwards;
+     animation-name: fadeInUp;
+     animation-duration: 0.8s;
+     animation-timing-function: ease-out;
  }
