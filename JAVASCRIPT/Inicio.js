@@ -17,10 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// ==========================
-// 2. FILTRO POR TIPO (Agencia / Distribuidora / Importadora)
-// Versión robusta: espera DOM, normaliza texto y oculta el <a> contenedor
-// ==========================
 document.addEventListener("DOMContentLoaded", () => {
     // Selecciona todos los botones de navegación (clase común: boton-nav)
     const botonesNav = document.querySelectorAll(".boton-nav");
@@ -71,9 +67,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // (Opcional) - Si quieres un botón para "Mostrar todo" añade:
-    // const mostrarTodoBtn = document.createElement('button');
-    // mostrarTodoBtn.textContent = 'Mostrar todo';
-    // mostrarTodoBtn.addEventListener('click', () => filtrarPorTipo('todos'));
-    // document.querySelector('.navegacion-principal').appendChild(mostrarTodoBtn);
 }); 

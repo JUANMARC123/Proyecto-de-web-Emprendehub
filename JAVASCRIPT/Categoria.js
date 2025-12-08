@@ -1,5 +1,5 @@
 // =========================
-// 🔥 CARRUSEL DE TARJETAS
+//  CARRUSEL DE TARJETAS
 // =========================
 
 // Elementos
@@ -34,7 +34,7 @@ btnPrev.addEventListener("click", () => {
 });
 
 // =========================
-// 🔍 BÚSQUEDA INTELIGENTE
+//  BÚSQUEDA INTELIGENTE
 // =========================
 
 const inputBusqueda = document.getElementById("entrada-busqueda");
@@ -54,7 +54,7 @@ inputBusqueda.addEventListener("input", () => {
 
 
 // =========================
-// 👆 DESLIZAMIENTO TÁCTIL
+//  DESLIZAMIENTO TÁCTIL
 // =========================
 
 let startX = 0;
