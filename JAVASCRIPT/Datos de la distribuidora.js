@@ -40,117 +40,54 @@ function initMapaReal() {
 // Iniciar mapa cuando cargue la página
 window.onload = initMapaReal;
 
-// =============================
-// Cargar todos los datos en la página
-// =============================
-document.addEventListener("DOMContentLoaded", function () {
-    // Nombre y categoría
-    document.querySelector(".nombre-distribuidora").textContent = datosDistribuidora.nombre;
-    document.querySelector(".categoria").textContent = datosDistribuidora.categoria;
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleccionamos elementos
+    const boton = document.querySelector(".boton-whatsapp");
+    const telefonoEl = document.getElementById("telefono-principal");
 
-    // Logo
-    document.getElementById("logoDistribuidora").src = datosDistribuidora.logo;
-
-    // Galería de fotos
-    const galeria = document.querySelector(".galeria-productos");
-    galeria.innerHTML = ""; // limpiamos las imágenes de ejemplo
-    datosDistribuidora.fotos.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = "Foto de la distribuidora";
-        img.classList.add("imagen-producto");
-        galeria.appendChild(img);
-    });
-
-    // Descripción
-    document.querySelector(".parrafo-descripcion").textContent = datosDistribuidora.descripcion;
-
-    // Productos populares
-    const listaProductos = document.querySelector(".lista-productos");
-    listaProductos.innerHTML = "";
-    datosDistribuidora.productosPopulares.forEach(prod => {
-        const li = document.createElement("li");
-        li.classList.add("item-producto");
-        li.textContent = prod;
-        listaProductos.appendChild(li);
-    });
-
-    // Dirección
-    document.querySelector(".parrafo-direccion").textContent = datosDistribuidora.direccion;
-
-    // Horarios
-    document.querySelectorAll(".item-horario")[0].textContent = `Lunes a Viernes: ${datosDistribuidora.horario.lunesViernes}`;
-    document.querySelectorAll(".item-horario")[1].textContent = `Sábado: ${datosDistribuidora.horario.sabado}`;
-    document.querySelectorAll(".item-horario")[2].textContent = `Domingo: ${datosDistribuidora.horario.domingo}`;
-
-    // Teléfonos
-    const enlacesTel = document.querySelectorAll(".enlace-telefono");
-    enlacesTel[0].href = "tel:" + datosDistribuidora.telefonos[0];
-    enlacesTel[0].textContent = datosDistribuidora.telefonos[0];
-    if (datosDistribuidora.telefonos[1]) {
-        enlacesTel[1].href = "tel:" + datosDistribuidora.telefonos[1];
-        enlacesTel[1].textContent = datosDistribuidora.telefonos[1];
-    } else {
-        enlacesTel[1].parentElement.style.display = "none";
+    // Debug rápido si algo falta
+    if (!telefonoEl) {
+        console.error("No se encontró el elemento #telefono-principal");
+        alert("Error: no se encontró el número en la página. Revisa el id telefono-principal.");
+        return;
+    }
+    if (!boton) {
+        console.error("No se encontró el botón .boton-whatsapp");
+        alert("Error: no se encontró el botón de WhatsApp. Revisa la clase boton-whatsapp.");
+        return;
     }
 
-    // =============================
-    // Botón WhatsApp
-    // =============================
-    document.querySelector(".boton-whatsapp").addEventListener("click", function () {
-        const mensaje = encodeURIComponent(`¡Hola ${datosDistribuidora.nombre}! Me interesa conocer sus precios y productos.`);
-        const url = `https://wa.me/${datosDistribuidora.whatsapp}?text=${mensaje}`;
+    // Tomamos y normalizamos solo los dígitos del número
+    let telefonoRaw = telefonoEl.textContent || telefonoEl.innerText || "";
+    let telefono = telefonoRaw.replace(/\D/g, ""); // elimina todo lo que no sea dígito
+
+    if (!telefono) {
+        console.error("El número está vacío después de normalizar:", telefonoRaw);
+        alert("Error: el número de teléfono está vacío o tiene formato inválido.");
+        return;
+    }
+
+    // Si el usuario ya incluyó código de país, no lo duplicamos.
+    // Si el número comienza con '591' (Bolivia) lo usamos tal cual; si comienza con '0' lo quitamos.
+    if (telefono.startsWith("0")) {
+        telefono = telefono.replace(/^0+/, "");
+    }
+    // Si el número ya tiene 591 al inicio, no añadimos. Si no, añadimos 591.
+    const codigoPais = "591";
+    const telefonoConPais = telefono.startsWith(codigoPais) ? telefono : codigoPais + telefono;
+
+    // Hacemos que el link "tel" también funcione (opcional)
+    if (telefonoEl.tagName.toLowerCase() === "a") {
+        telefonoEl.setAttribute("href", "tel:" + telefono);
+    }
+
+    // Evento del botón
+    boton.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = "https://wa.me/" + telefonoConPais;
+        // Para depuración en consola:
+        console.log("Abriendo WhatsApp URL:", url);
+        // Abrir en nueva pestaña/ventana
         window.open(url, "_blank");
     });
-
-    // =============================
-    // Botón Compartir Perfil
-    // =============================
-    document.querySelector(".boton-compartir").addEventListener("click", async function () {
-        const shareData = {
-            title: datosDistribuidora.nombre + " - EmprendeHub",
-            text: "Mira esta distribuidora en EmprendeHub",
-            url: window.location.href
-        };
-
-        try {
-            await navigator.share(shareData);
-        } catch (err) {
-            // Si el navegador no soporta Web Share API, copiamos al portapapeles
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                alert("Enlace copiado al portapapeles");
-            });
-        }
-    });
-
-    // =============================
-    // Zoom simple del mapa (imagen simulada)
-    // =============================
-    const imagenMapa = document.querySelector(".imagen-mapa");
-    let escala = 1;
-
-    document.querySelector(".zoom-mas").addEventListener("click", () => {
-        escala = Math.min(escala + 0.3, 3);
-        imagenMapa.style.transform = `scale(${escala})`;
-    });
-
-    document.querySelector(".zoom-menos").addEventListener("click", () => {
-        escala = Math.max(escala - 0.3, 1);
-        imagenMapa.style.transform = `scale(${escala})`;
-    });
-
-    // =============================
-    // Animaciones al hacer scroll (opcional pero bonito)
-    // =============================
-    const elementosAnimados = document.querySelectorAll('.articulo-perfil > section');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    elementosAnimados.forEach(el => observer.observe(el));
 });

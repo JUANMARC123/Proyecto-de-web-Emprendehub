@@ -17,24 +17,20 @@
             <h1>EmprendeHub</h1>
         </div>
         <hr>
-        <section class="busqueda">
-            <h2>¿Qué estás buscando?</h2>
-            <div class="campo-busqueda">
-                <span>&#128269;</span>
-                <input type="text" placeholder="Buscar">
-            </div>
-        </section>
     </header>
-
     <nav class="filtros-busqueda">
+        <div class="campo-busqueda">
+            <span>&#128269;</span>
+            <input type="text" placeholder="Buscar">
+        </div>
         <div class="filtro-zona">
             <label>Seleccionar Zona</label>
             <select>
                 <option>Zona</option>
-                <option>1 Villa Adela</option>
-                <option>2 Villa Bolívar A</option>
-                <option>3 Villa Bolívar B</option>
-                <option>4 Villa Bolívar C</option>
+                <option value="alto de la alianza">Alto de la Alianza</option>
+                <option value="avenida cívica">Avenida Cívica</option>
+                <option value="av. 6 de marzo">Av. 6 de Marzo</option>
+                <option value="san juan">San Juan</option>
                 <option>5 12 de Octubre</option>
                 <option>6 Villa Ingenio</option>
                 <option>7 Senkata</option>
@@ -95,7 +91,7 @@
                 <option>&#128187; Electrónica y tecnología de consumo</option>
                 <option>&#128085; Moda, calzado y textil</option>
                 <option>&#127922; Juguetes y artículos infantiles</option>
-                <option>&#128736; Ferretería, construcción y herramientas</option>
+                <option value="Ferretería">&#128736; Ferretería, construcción y herramientas</option>
                 <option>&#128663; Automotriz</option>
                 <option>&#129505; Salud, farmacia y cuidado médico</option>
                 <option>&#9999; Oficina y papelería</option>
@@ -104,10 +100,9 @@
                 <option>&#127881; Eventos, fiestas y artículos de celebración</option>
                 <option>&#127793; Agroindustrial y agricultura</option>
                 <option>&#128054; Mascotas</option>
-                <option>&#128719; Muebles y electrodomésticos grandes</option>
+                <option value="Muebles">&#128719; Muebles y electrodomésticos grandes</option>
             </select>
         </div>
-        <button class="boton-abierto">Abierto ahora </button>
         <button class="boton-whatsapp"> Con WhatsApp Directo</button>
     </nav>
 
@@ -115,15 +110,16 @@
         <section class="lista-resultados">
             <h2>Resultados (4)</h2>
 
-            <article class="tarjeta-distribuidora">
+            <article class="tarjeta-distribuidora" data-coordenadas="-16.529,-68.169">
                 <img src="./IMAGENES/campero/importadora campero.png" alt="logo de Importadora Campero"
                     class="logo-empresa">
                 <div class="detalles-empresa">
                     <h3>IMPORTADORA CAMPERO S.R.L.</h3>
-                    <p>Materiales de Construcción</p>
-                    <p>Zona: Av. 6 de Marzo (Eje principal)</p>
+                    <p>Ferretería, construcción y herramientas</p>
+                    <p>Zona: Av. 6 de Marzo </p>
                     <p>Tipo de Distribuidor: Importadora/Distribuidora Mayorista</p>
                     <p>Productos: Cemento, Fierro, Cerámica, Ladrillo, Agregados</p>
+                    <P>WhatsApp: NO TIENE </P>
                 </div>
                 <a href="./DISTRIBUIDORA/Campero.html">
                     <button class="boton-detalles">Ver detalles</button>
@@ -131,49 +127,55 @@
 
             </article>
 
-            <article class="tarjeta-distribuidora">
+            <article class="tarjeta-distribuidora" data-coordenadas="-16.513,-68.188">
                 <img src="./IMAGENES/incer/incer srl.jpeg" alt="logo de INCER G.A.L.B." class="logo-empresa">
                 <div class="detalles-empresa">
                     <h3>INCER – G.A.L.B. S.R.L.</h3>
-                    <p>Materiales de Construcción</p>
-                    <p>Zona: Avenida Cívica (Santiago 1)</p>
+                    <p>Ferretería, construcción y herramientas</p>
+                    <p>Zona: Avenida Cívica </p>
                     <p>Tipo de Distribuidor: Agencia de Venta/Distribuidora</p>
                     <p>Productos: Materiales de obra gruesa y fina, Revestimientos, Tuberías</p>
+                    <P>WhatsApp: SI TIENE </P>
                 </div>
                 <a href="./DISTRIBUIDORA/Incer.html">
                     <button class="boton-detalles">Ver detalles</button>
                 </a>
 
+
             </article>
 
-            <article class="tarjeta-distribuidora">
+            <article class="tarjeta-distribuidora" data-coordenadas="-16.560,-68.210">
                 <img src="./IMAGENES/ica/ica-logo.png" alt="logo de ICA" class="logo-empresa">
                 <div class="detalles-empresa">
                     <h3>INDUSTRIAS DEL CAUCHO APARRE S.R.L. (ICA)</h3>
-                    <p>Suministros Industriales</p>
-                    <p>Zona: Alto de la Alianza (Camino a Viacha Km2)</p>
+                    <p>Ferretería, construcción y herramientas</p>
+                    <p>Zona: Alto de la Alianza </p>
                     <p>Tipo de Distribuidor: Industria/Distribuidora Especializada</p>
                     <p>Productos: Productos de goma, Bandas transportadoras, Mangueras industriales, Empaques</p>
+                    <P>WhatsApp: NO TIENE </P>
                 </div>
                 <a href="./DISTRIBUIDORA/ICA.html">
                     <button class="boton-detalles">Ver detalles</button>
                 </a>
 
+
             </article>
 
-            <article class="tarjeta-distribuidora">
+            <article class="tarjeta-distribuidora" data-coordenadas="-16.550,-68.200">
                 <img src="./IMAGENES/carpinteria/carpiteria.jpeg" alt="logo de Bolivian Timberland"
                     class="logo-empresa">
                 <div class="detalles-empresa">
                     <h3>BOLIVIAN TIMBERLAND</h3>
-                    <p>Carpintería y Maderas</p>
-                    <p>Zona: San Juan (Carretera a Viacha)</p>
+                    <p>Muebles y electrodomésticos grandes</p>
+                    <p>Zona: San Juan </p>
                     <p>Tipo de Distribuidor: Carpintería Industrial/Distribuidora</p>
                     <p>Productos: Puertas, Marcos, Pisos flotantes, Madera aserrada, Melamina</p>
+                    <P>WhatsApp: NO TIENE </P>
                 </div>
                 <a href="./DISTRIBUIDORA/Carpiteria.html">
                     <button class="boton-detalles">Ver detalles</button>
                 </a>
+
 
             </article>
         </section>
@@ -181,12 +183,9 @@
         <section class="mapa-ubicacion">
             <div class="contenedor-mapa">
                 <figure id="mapaFigure">
-                    <div id="mapaReal" data-coordenadas="-16.513,-68.169"></div>
+                    <div id="mapaReal"></div>
 
                     <figcaption>Ubicación aproximada</figcaption>
-
-                    <button class="zoom-control" id="zoomMas">+</button>
-                    <button class="zoom-control" id="zoomMenos">-</button>
                 </figure>
             </div>
         </section>

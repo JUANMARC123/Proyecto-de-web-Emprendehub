@@ -74,17 +74,3 @@ carrusel.addEventListener("touchend", e => {
 
     actualizarCarrusel();
 });
-// =========================
-// ✨ ANIMACIÓN AL CARGAR
-// =========================
-window.addEventListener("load", () => {
-    tarjetas.forEach((tarjeta, i) => {
-        tarjeta.style.opacity = "0";
-        tarjeta.style.transform = "translateY(20px)";
-        setTimeout(() => {
-            tarjeta.style.transition = "0.6s ease";
-            tarjeta.style.opacity = "1";
-            tarjeta.style.transform = "translateY(0)";
-        }, i * 100);
-    });
-});

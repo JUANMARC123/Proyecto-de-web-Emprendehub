@@ -272,12 +272,7 @@
      transition: background-color 0.2s ease-in-out;
  }
 
- /* Efecto al pasar el ratón (Hover) */
- .boton-secundario:hover {
-     /* Un tono un poco más oscuro o vibrante del cian para el efecto visual */
-     background-color: #38b2ac;
-     /* Tono de cian más oscuro */
- }
+
 
  /* Estilo adicional para el campo de email para mejor integración visual */
  .campo-email {
@@ -442,10 +437,15 @@
  }
 
 
+ /* ============================================= */
+ /* KEYFRAMES ESENCIALES Y UNIFICADOS             */
+ /* ============================================= */
 
+ /* 1. Entrada general: Deslizamiento suave desde abajo y aparición */
  @keyframes fadeInUp {
      from {
          opacity: 0;
+         /* Unificado: Usaremos 30px como un buen valor de desplazamiento */
          transform: translateY(30px);
      }
 
@@ -455,108 +455,33 @@
      }
  }
 
- .articulo-perfil>* {
-     animation: fadeInUp 0.7s ease-out forwards;
-     opacity: 0;
-
- }
-
-
- .columna-izquierda {
-     animation-delay: 0.1s;
- }
-
- .seccion-contacto-mapa>.seccion-contacto {
-     animation-delay: 0.2s;
- }
-
- .seccion-contacto-mapa>.seccion-mapa {
-     animation-delay: 0.3s;
- }
-
-
- .logo-empresa-cabecera {
-     transition: transform 0.3s ease;
- }
-
- .logo-empresa-cabecera:hover {
-     animation: bounceLogo 0.8s ease;
- }
-
- @keyframes bounceLogo {
-
-     0%,
-     100% {
-         transform: translateY(0);
-     }
-
-     50% {
-         transform: translateY(-12px);
-     }
- }
-
-
- .boton-whatsapp,
- .boton-compartir {
-     transition: all 0.3s ease;
-     transform: translateY(0);
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
- }
-
- .boton-whatsapp:hover {
-     background-color: #20c05a;
-     transform: translateY(-4px);
-     box-shadow: 0 12px 20px rgba(37, 211, 102, 0.35);
- }
-
- .boton-compartir:hover {
-     background-color: #f7fafc;
-     transform: translateY(-4px);
-     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
- }
-
-
- .galeria-productos {
-     scroll-behavior: smooth;
- }
-
- .imagen-placeholder {
-     transition: all 0.4s ease;
-     opacity: 0.85;
- }
-
- .imagen-placeholder:hover {
-     transform: scale(1.08);
-     opacity: 1;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
- }
-
-
- .perfil-header .nombre-distribuidora {
-     animation: slideInLeft 0.8s ease-out forwards;
-     opacity: 0;
-     animation-delay: 0.3s;
- }
-
- .perfil-header .categoria {
-     animation: slideInLeft 0.8s ease-out forwards;
-     opacity: 0;
-     animation-delay: 0.5s;
- }
-
- @keyframes slideInLeft {
+ /* 2. Entrada con escala suave (para elementos como barra de búsqueda) */
+ @keyframes fadeInScale {
      from {
          opacity: 0;
-         transform: translateX(-40px);
+         transform: scale(0.95);
      }
 
      to {
          opacity: 1;
-         transform: translateX(0);
+         transform: scale(1);
      }
  }
 
+ /* 3. Rebote para el logo/iconos al hacer hover */
+ @keyframes bounce {
 
+     0%,
+     100% {
+         transform: translateY(0) scale(1);
+     }
+
+     50% {
+         transform: translateY(-10px) scale(1.1);
+     }
+ }
+
+ /* 4. Pulso para botones de contacto (ej: WhatsApp) */
  @keyframes pulse {
      0% {
          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
@@ -571,44 +496,165 @@
      }
  }
 
- .boton-whatsapp {
-     animation:hover {
-         animation: none;
-     }
-
-     animation: pulse 2.5s infinite ease-out;
- }
-
-
- .contenedor-mapa {
-     transition: transform 0.5s ease;
- }
-
- .contenedor-mapa:hover {
-     transform: scale(1.03);
- }
-
-
- body {
-     animation: fadeInBody 0.6s ease-out forwards;
- }
-
- @keyframes fadeInBody {
+ /* 5. Entrada del header desde arriba */
+ @keyframes slideDown {
      from {
+         transform: translateY(-100%);
          opacity: 0;
      }
 
      to {
+         transform: translateY(0);
          opacity: 1;
      }
  }
 
- .columna-izquierda,
- .seccion-contacto,
- .contenedor-mapa {
+ /* ============================================= */
+ /* ESTILOS Y ANIMACIONES DE ENTRADA AL CARGAR     */
+ /* ============================================= */
+
+ /* Clase base para aplicar la animación de entrada (fadeInUp) a elementos principales */
+ .animacion-entrada {
      opacity: 0;
-     animation-fill-mode: forwards;
-     animation-name: fadeInUp;
-     animation-duration: 0.8s;
-     animation-timing-function: ease-out;
+     animation: fadeInUp 0.7s ease-out forwards;
+ }
+
+ /* Aplicación a tarjetas (categoría y distribuidora) */
+ .tarjeta-categoria,
+ .tarjeta-distribuidora {
+     /* Usamos la variable --i para el retraso progresivo */
+     animation-delay: calc(var(--i, 0) * 0.1s);
+     transition: all 0.35s ease;
+     /* Transición para el hover */
+ }
+
+ /* Ejemplo de cómo definir el retraso en HTML o con CSS (usando nth-child) */
+ .tarjeta-categoria:nth-child(1) {
+     --i: 1;
+ }
+
+ .tarjeta-categoria:nth-child(2) {
+     --i: 2;
+ }
+
+ /* ... continúa según sea necesario */
+
+
+ /* Aplicación a elementos de la página de perfil/distribuidora */
+ /* Se utiliza .animacion-entrada en el HTML para estos elementos */
+ .columna-izquierda.animacion-entrada {
+     animation-delay: 0.1s;
+ }
+
+ .seccion-contacto.animacion-entrada {
+     animation-delay: 0.3s;
+ }
+
+ .contenedor-mapa.animacion-entrada {
+     animation-delay: 0.5s;
+ }
+
+
+ /* Header/Cabecera */
+ header,
+ .cabecera-principal {
+     animation: slideDown 0.7s ease-out;
+ }
+
+ /* Barra de búsqueda */
+ .contenedor-busqueda {
+     opacity: 0;
+     animation: fadeInScale 0.8s ease-out 0.3s forwards;
+ }
+
+ /* Footer (ejemplo) */
+ .pie-pagina {
+     opacity: 0;
+     animation: fadeInUp 0.9s ease-out 0.3s forwards;
+ }
+
+ /* ============================================= */
+ /* EFECTOS DE INTERACCIÓN (HOVER)                */
+ /* ============================================= */
+
+ /* Hover en tarjetas: elevación y sombra */
+ .tarjeta-categoria:hover,
+ .tarjeta-distribuidora:hover,
+ .columna-izquierda:hover,
+ .seccion-contacto:hover {
+     transform: translateY(-8px) scale(1.02);
+     /* Desplazamiento ligeramente menor para unificar */
+     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+     z-index: 10;
+ }
+
+ /* Hover en botones */
+ .boton-detalles,
+ .boton-whatsapp,
+ .boton-secundario {
+     transition: all 0.3s ease;
+     transform: translateY(0);
+ }
+
+ .boton-detalles:hover,
+ .boton-whatsapp:hover,
+ .boton-secundario:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Icono/Logo: pequeño rebote al hover */
+ .logo-sitio:hover,
+ .logo-empresa-cabecera:hover,
+ .tarjeta-categoria:hover .encabezado-categoria div {
+     animation: bounce 0.8s ease;
+ }
+
+ /* Imágenes de Galería/Productos */
+ .imagen-placeholder {
+     transition: transform 0.4s ease, opacity 0.4s ease;
+ }
+
+ .imagen-placeholder:hover {
+     transform: scale(1.08);
+     opacity: 1;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+ }
+
+ /* Pulso de WhatsApp (automático) */
+ .boton-whatsapp {
+     animation: pulse 4s infinite ease-out;
+     /* Puedes ajustar la velocidad */
+ }
+
+ /* Efecto al pasar el ratón (Hover) */
+ .boton-secundario:hover {
+     /* Un tono un poco más oscuro o vibrante del cian para el efecto visual */
+     background-color: #38b2ac;
+     /* Tono de cian más oscuro */
+ }
+
+ /* Enlaces con subrayado animado */
+ .lista-enlaces a {
+     position: relative;
+     transition: color 0.3s ease;
+ }
+
+ .lista-enlaces a::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 1.5px;
+     bottom: -2px;
+     left: 0;
+     background-color: #4DD0E1;
+     transition: width 0.35s ease;
+ }
+
+ .lista-enlaces a:hover {
+     color: #4DD0E1 !important;
+ }
+
+ .lista-enlaces a:hover::after {
+     width: 100%;
  }

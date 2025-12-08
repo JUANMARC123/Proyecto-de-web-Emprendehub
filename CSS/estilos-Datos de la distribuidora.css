@@ -60,16 +60,23 @@ body {
     font-weight: 600;
 }
 
-.separador-cabecera {
-    display: none;
-    /* Oculto en diseño final */
+
+.campo-busqueda {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.seccion-busqueda {
-    display: none;
-    /* No se ve en el header de la imagen, quizás en mobile */
-}
 
+.campo-busqueda input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
 
 /* Contenido Principal */
 .contenido-principal {
@@ -163,28 +170,37 @@ body {
     margin-right: 4px;
 }
 
-/* Galeria */
 .galeria-productos {
     display: flex;
-    gap: 16px;
-    /* Espacio Medio */
-    margin-bottom: 24px;
-    /* Espacio Grande */
-    overflow-x: auto;
+    /* Activa Flexbox */
+
+    /* 1. COMPORTAMIENTO BASE (MÓVIL/CELULARES) */
+    /* La dirección principal es vertical (columna) */
+    flex-direction: column;
+
+    /* Reducimos el espacio vertical para móvil */
+    gap: 10px;
+    margin-bottom: 16px;
+
+    /* En columna, ya no necesitamos scroll horizontal, lo quitamos o dejamos hidden */
+    overflow-x: hidden;
 }
 
 .imagen-placeholder {
-    min-width: 100px;
-    /* Ancho fijo para las fotos */
-    height: 100px;
-    border-radius: 8px;
-    background-color: #DDDDDD;
-    /* Borde Gris */
+    /* En modo columna, las imágenes deben ocupar el 100% del ancho del contenedor */
+    min-width: 100%;
+    height: 90px;
+    /* Altura más adecuada para una imagen de columna en móvil */
+
+    /* Alineación de contenido dentro del placeholder (si es necesario) */
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* El resto de estilos se mantienen */
+    border-radius: 8px;
+    background-color: #DDDDDD;
     color: #666666;
-    /* Texto Secundario */
     font-size: 1.5rem;
     font-weight: bold;
     border: 1px solid #BBBBBB;
@@ -256,27 +272,6 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-/* Simulación de icono de ubicación */
-.subtitulo-contacto:first-child::before {
-    content: '📍';
-    font-size: 1.2em;
-    margin-right: 3px;
-}
-
-/* Simulación de icono de horario */
-.subtitulo-contacto:nth-child(2)::before {
-    content: '🕒';
-    font-size: 1.2em;
-    margin-right: 3px;
-}
-
-/* Simulación de icono de teléfono */
-.subtitulo-contacto:nth-child(3)::before {
-    content: '📞';
-    font-size: 1.2em;
-    margin-right: 3px;
 }
 
 .parrafo-direccion,
@@ -460,8 +455,29 @@ body {
     color: #718096;
 }
 
+@media (min-width: 768px) {
+    .galeria-productos {
+        /* Cambiamos la dirección para que sea horizontal (fila) */
+        flex-direction: row;
+
+        /* Restauramos el gap y margen para escritorio */
+        gap: 16px;
+        margin-bottom: 24px;
+
+        /* Habilitamos el scroll horizontal para ver más imágenes en fila */
+        overflow-x: auto;
+    }
+
+    .imagen-placeholder {
+        /* En fila, definimos un ancho fijo o porcentual pequeño */
+        min-width: 100px;
+        height: 100px;
+        /* Restauramos la altura de escritorio */
+    }
+}
 
 @media (min-width: 1024px) {
+
     .seccion-contacto-mapa {
 
         grid-template-rows: auto;
@@ -488,13 +504,14 @@ body {
 }
 
 /* ============================================= */
-/* ANIMACIONES SUAVES Y PROFESIONALES           */
+/* KEYFRAMES ESENCIALES Y UNIFICADOS             */
 /* ============================================= */
 
-/* 1. Fade In + deslizamiento suave al cargar la página */
+/* 1. Entrada general: Deslizamiento suave desde abajo y aparición */
 @keyframes fadeInUp {
     from {
         opacity: 0;
+        /* Unificado: Usaremos 30px como un buen valor de desplazamiento */
         transform: translateY(30px);
     }
 
@@ -504,39 +521,33 @@ body {
     }
 }
 
-/* Aplicar a las secciones principales al cargar */
-.columna-izquierda,
-.seccion-contacto,
-.contenedor-mapa {
-    animation: fadeInUp 0.8s ease-out forwards;
+/* 2. Entrada con escala suave (para elementos como barra de búsqueda) */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* Retraso progresivo para que aparezcan una tras otra (efecto cascada) */
-.columna-izquierda {
-    animation-delay: 0.1s;
+/* 3. Rebote para el logo/iconos al hacer hover */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
 }
 
-.seccion-contacto {
-    animation-delay: 0.3s;
-}
-
-.contenedor-mapa {
-    animation-delay: 0.5s;
-}
-
-/* 2. Hover suave en tarjetas (elevación + sombra más fuerte) */
-.columna-izquierda,
-.seccion-contacto {
-    transition: all 0.3s ease;
-}
-
-.columna-izquierda:hover,
-.seccion-contacto:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* 3. Botón WhatsApp con pulso sutil (muy típico y efectivo) */
+/* 4. Pulso para botones de contacto (ej: WhatsApp) */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
@@ -551,126 +562,191 @@ body {
     }
 }
 
-.boton-whatsapp {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.boton-whatsapp::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-.boton-whatsapp:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
-}
-
-/* Pulso cada 4 segundos (opcional, quítalo si prefieres solo en hover) */
-.boton-whatsapp {
-    animation: pulse 4s infinite ease-out;
-}
-
-/* 4. Efecto ripple al hacer clic en botones */
-.boton-whatsapp:active::after,
-.boton-compartir:active::after {
-    width: 300px;
-    height: 300px;
-}
-
-/* 5. Imágenes de galería: escala suave al hover */
-.imagen-placeholder {
-    transition: transform 0.4s ease;
-}
-
-.imagen-placeholder:hover {
-    transform: scale(1.08);
-}
-
-/* 6. Productos populares: entrada uno a uno */
-.item-producto {
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: slideInLeft 0.6s ease forwards;
-}
-
-@keyframes slideInLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Retraso progresivo para cada producto */
-.item-producto:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.item-producto:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.item-producto:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.item-producto:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.item-producto:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-
-.enlace-telefono,
-.boton-compartir {
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.enlace-telefono::after,
-.boton-compartir::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: #40E0D0;
-    transition: width 0.3s ease;
-}
-
-.enlace-telefono:hover::after,
-.boton-compartir:hover::after {
-    width: 100%;
-}
-
-.enlace-telefono:hover,
-.boton-compartir:hover {
-    color: #40E0D0;
-}
-
-
-.header-scrolled {
-    animation: slideDown 0.5s ease-out;
-}
-
+/* 5. Entrada del header desde arriba */
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
+        opacity: 0;
     }
 
     to {
         transform: translateY(0);
+        opacity: 1;
     }
+}
+
+/* ============================================= */
+/* ESTILOS Y ANIMACIONES DE ENTRADA AL CARGAR     */
+/* ============================================= */
+
+/* Clase base para aplicar la animación de entrada (fadeInUp) a elementos principales */
+.animacion-entrada {
+    opacity: 0;
+    animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* Aplicación a tarjetas (categoría y distribuidora) */
+.tarjeta-categoria,
+.tarjeta-distribuidora {
+    /* Usamos la variable --i para el retraso progresivo */
+    animation-delay: calc(var(--i, 0) * 0.1s);
+    transition: all 0.35s ease;
+    /* Transición para el hover */
+}
+
+/* Ejemplo de cómo definir el retraso en HTML o con CSS (usando nth-child) */
+.tarjeta-categoria:nth-child(1) {
+    --i: 1;
+}
+
+.tarjeta-categoria:nth-child(2) {
+    --i: 2;
+}
+
+/* ... continúa según sea necesario */
+
+
+/* Aplicación a elementos de la página de perfil/distribuidora */
+/* Se utiliza .animacion-entrada en el HTML para estos elementos */
+.columna-izquierda.animacion-entrada {
+    animation-delay: 0.1s;
+}
+
+.seccion-contacto.animacion-entrada {
+    animation-delay: 0.3s;
+}
+
+.contenedor-mapa.animacion-entrada {
+    animation-delay: 0.5s;
+}
+
+
+/* Header/Cabecera */
+header,
+.cabecera-principal {
+    animation: slideDown 0.7s ease-out;
+}
+
+/* Barra de búsqueda */
+.contenedor-busqueda {
+    opacity: 0;
+    animation: fadeInScale 0.8s ease-out 0.3s forwards;
+}
+
+/* Footer (ejemplo) */
+.pie-pagina {
+    opacity: 0;
+    animation: fadeInUp 0.9s ease-out 0.3s forwards;
+}
+
+/* ============================================= */
+/* EFECTOS DE INTERACCIÓN (HOVER)                */
+/* ============================================= */
+
+/* Hover en tarjetas: elevación y sombra */
+.tarjeta-categoria:hover,
+.tarjeta-distribuidora:hover,
+.columna-izquierda:hover,
+.seccion-contacto:hover {
+    transform: translateY(-8px) scale(1.02);
+    /* Desplazamiento ligeramente menor para unificar */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+/* Hover en botones */
+.boton-detalles,
+.boton-whatsapp,
+.boton-secundario {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.boton-detalles:hover,
+.boton-whatsapp:hover,
+.boton-secundario:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono/Logo: pequeño rebote al hover */
+.logo-sitio:hover,
+.logo-empresa-cabecera:hover,
+.tarjeta-categoria:hover .encabezado-categoria div {
+    animation: bounce 0.8s ease;
+}
+
+/* Imágenes de Galería/Productos */
+.imagen-placeholder {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.imagen-placeholder:hover {
+    transform: scale(1.08);
+    opacity: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Enlaces con subrayado animado */
+.enlace-animado {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.enlace-animado::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: -2px;
+    left: 0;
+    background-color: #4DD0E1;
+    /* Color unificado de ejemplo */
+    transition: width 0.35s ease;
+}
+
+.enlace-animado:hover {
+    color: #4DD0E1 !important;
+}
+
+.enlace-animado:hover::after {
+    width: 100%;
+}
+
+/* Pulso de WhatsApp (automático) */
+.boton-whatsapp {
+    animation: pulse 4s infinite ease-out;
+    /* Puedes ajustar la velocidad */
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.boton-secundario:hover {
+    /* Un tono un poco más oscuro o vibrante del cian para el efecto visual */
+    background-color: #38b2ac;
+    /* Tono de cian más oscuro */
+}
+
+/* Enlaces con subrayado animado */
+.lista-enlaces a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.lista-enlaces a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: -2px;
+    left: 0;
+    background-color: #4DD0E1;
+    transition: width 0.35s ease;
+}
+
+.lista-enlaces a:hover {
+    color: #4DD0E1 !important;
+}
+
+.lista-enlaces a:hover::after {
+    width: 100%;
 }

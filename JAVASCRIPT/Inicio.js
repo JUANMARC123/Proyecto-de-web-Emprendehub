@@ -1,162 +1,79 @@
-// ../JAVASCRIPT/Inicio.js
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("EmprendeHub - Página cargada correctamente");
+document.addEventListener("DOMContentLoaded", () => {
+    const botonBuscar = document.getElementById("boton-buscar");
+    const inputBusqueda = document.querySelector(".campo-busqueda");
+    const selectorZona = document.getElementById("selector-zona");
 
-    /* ==========================================
-       1. CARRUSEL DE CATEGORÍAS
-    (horizontal)
-    ========================================== */
-    const listaCategorias = document.querySelector(".lista-categorias");
-    const btnAtras = document.querySelector(".boton-carrusel.atras");
-    const btnAdelante = document.querySelector(".boton-carrusel.adelante");
+    botonBuscar.addEventListener("click", () => {
+        const termino = inputBusqueda.value.trim();
+        const zonaSeleccionada = selectorZona.options[selectorZona.selectedIndex].text;
 
-    const scrollAmount = 300; // píxeles que se desplaza cada vez (ajusta según tu diseño)
+        // Guardamos los criterios en localStorage
+        localStorage.setItem("busquedaNombre", termino);
+        localStorage.setItem("busquedaZona", zonaSeleccionada);
 
-    btnAdelante.addEventListener("click", () => {
-        listaCategorias.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        // Redirigimos a distribuidora.html
+        window.location.href = "./Distribuidoras.html";
     });
+});
 
-    btnAtras.addEventListener("click", () => {
-        listaCategorias.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    });
-
-    // Opcional: desplazamiento con rueda del ratón (horizontal)
-    listaCategorias.addEventListener("wheel", (e) => {
-        e.preventDefault();
-        listaCategorias.scrollLeft += e.deltaY;
-    });
-
-    /* ==========================================
-       2. FILTROS SUPERIORES (Agencias, Distribuidoras, Importadoras)
-    ========================================== */
+// ==========================
+// 2. FILTRO POR TIPO (Agencia / Distribuidora / Importadora)
+// Versión robusta: espera DOM, normaliza texto y oculta el <a> contenedor
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+    // Selecciona todos los botones de navegación (clase común: boton-nav)
     const botonesNav = document.querySelectorAll(".boton-nav");
 
-    botonesNav.forEach(boton => {
-        boton.addEventListener("click", function () {
-            // Quitar clase activa de todos
-            botonesNav.forEach(b => b.classList.remove("activo"));
+    // Función que recibe el tipo a filtrar (por ejemplo: "Agencia", "Distribuidora", "Importadora")
+    function filtrarPorTipo(tipo) {
+        const tarjetas = document.querySelectorAll(".tarjeta-negocio");
 
-            // Añadir clase activa al clicado
-            this.classList.add("activo");
+        // Normalizamos para comparar sin importar mayúsculas/minúsculas
+        const tipoNormal = tipo.trim().toLowerCase();
 
-            const tipoSeleccionado = this.textContent.trim();
-            console.log(`Filtro seleccionado: ${tipoSeleccionado}`);
+        tarjetas.forEach(tarjeta => {
+            const tipoElem = tarjeta.querySelector(".tipo-distribuidor");
+            const tipoTexto = tipoElem ? tipoElem.textContent.trim().toLowerCase() : "";
 
-            // Aquí puedes filtrar las tarjetas de negocio
-            filtrarNegocios(tipoSeleccionado, obtenerTextoBusqueda(), obtenerZonaSeleccionada());
-        });
-    });
+            // Queremos ocultar/mostrar el elemento <a> que envuelve la tarjeta
+            const wrapper = tarjeta.closest("a") || tarjeta.parentElement;
 
-    /* ==========================================
-       3. BÚSQUEDA EN TIEMPO REAL (texto + zona)
-    ========================================== */
-    const campoBusqueda = document.querySelector(".campo-busqueda");
-    const selectorZona = document.querySelector("#selector-zona");
-    const botonBuscar = document.querySelector("#boton-buscar");
-
-    // Función auxiliar para obtener el texto de búsqueda
-    function obtenerTextoBusqueda() {
-        return campoBusqueda.value.trim().toLowerCase();
-    }
-
-    // Función auxiliar para obtener la zona seleccionada
-    function obtenerZonaSeleccionada() {
-        return selectorZona.value; // devuelve "" si no hay nada seleccionado
-    }
-
-    // Búsqueda al escribir
-    campoBusqueda.addEventListener("input", () => {
-        filtrarNegocios(obtenerTipoActivo(), obtenerTextoBusqueda(), obtenerZonaSeleccionada());
-    });
-
-    // Búsqueda al cambiar zona
-    selectorZona.addEventListener("change", () => {
-        filtrarNegocios(obtenerTipoActivo(), obtenerTextoBusqueda(), obtenerZonaSeleccionada());
-    });
-
-    // Búsqueda al pulsar el botón grande
-    botonBuscar.addEventListener("click", () => {
-        filtrarNegocios(obtenerTipoActivo(), obtenerTextoBusqueda(), obtenerZonaSeleccionada());
-        console.log("Búsqueda realizada:", {
-            texto: obtenerTextoBusqueda(),
-            zona: selectorZona.options[selectorZona.selectedIndex]?.text || "Todas",
-            tipo: obtenerTipoActivo()
-        });
-    });
-
-    // Función que devuelve el texto del botón activo (o "Todos" si ninguno)
-    function obtenerTipoActivo() {
-        const activo = document.querySelector(".boton-nav.activo");
-        return activo ? activo.textContent.trim() : "Todos";
-    }
-
-    /* ==========================================
-       4. FILTRADO DE TARJETAS DE NEGOCIO (ejemplo básico)
-    ========================================== */
-    const todasLasTarjetas = document.querySelectorAll(".tarjeta-negocio");
-
-    function filtrarNegocios(tipo = "Todos", texto = "", zona = "") {
-        todasLasTarjetas.forEach(tarjeta => {
-            const nombre = tarjeta.querySelector(".nombre-distribuidora")?.textContent.toLowerCase() || "";
-            const categoria = tarjeta.querySelector(".categoria-distribuidora")?.textContent.toLowerCase() || "";
-            const tipoTarjeta = tarjeta.querySelector(".tipo-distribuidor")?.textContent || "Distribuidor";
-            const zonaTarjeta = tarjeta.querySelector(".info-negocio p:last-child")?.textContent || "";
-
-            const coincideTexto = nombre.includes(texto) || categoria.includes(texto);
-            const coincideTipo = tipo === "Todos" || tipoTarjeta.includes(tipo);
-            const coincideZona = zona === "" || zonaTarjeta.includes(zona);
-
-            if (coincideTexto && coincideTipo && coincideZ) {
-                tarjeta.style.display = "flex";
+            if (tipoNormal === "todos" || tipoTexto === tipoNormal) {
+                // Mostrar
+                if (wrapper) wrapper.style.display = ""; // deja que CSS original controle la presentación
+                else tarjeta.style.display = "";
             } else {
-                tarjeta.style.display = "none";
+                // Ocultar
+                if (wrapper) wrapper.style.display = "none";
+                else tarjeta.style.display = "none";
             }
         });
     }
 
-    // Al cargar la página mostramos todas
-    filtrarNegocios();
+    // Conectar eventos a cada botón, determinando el tipo a partir de su clase o texto
+    botonesNav.forEach(boton => {
+        boton.addEventListener("click", () => {
+            // Intenta deducir el tipo desde una de las clases específicas si existen
+            // (tu HTML tenía: <button class="boton-nav Agencia">, <button class="boton-nav Distribuidoras">, ...)
+            let tipo = "";
+            if (boton.classList.contains("Agencia")) tipo = "Agencia";
+            else if (boton.classList.contains("Distribuidoras")) tipo = "Distribuidora"; // normalizamos plural -> singular
+            else if (boton.classList.contains("Importadora")) tipo = "Importadora";
+            else {
+                // fallback: usar el texto del botón (por ejemplo "Agencias", "Distribuidoras" -> normalizamos)
+                tipo = boton.textContent.trim();
+                // si viene en plural, opcionalmente convertir "Agencias" -> "Agencia"
+                if (tipo.toLowerCase().endsWith("s")) tipo = tipo.slice(0, -1);
+            }
 
-    /* ==========================================
-       5. CLIC EN CATEGORÍAS
-    ========================================== */
-    const tarjetasCategoria = document.querySelectorAll(".tarjeta-categoria");
-
-    tarjetasCategoria.forEach(tarjeta => {
-        tarjeta.addEventListener("click", function () {
-            // Quitar selección anterior
-            tarjetasCategoria.forEach(t => t.classList.remove("seleccionada"));
-
-            // Marcar como seleccionada
-            this.classList.add("seleccionada");
-
-            const nombreCategoria = this.querySelector("span").textContent;
-            console.log("Categoría seleccionada:", nombreCategoria);
-
-            // Aquí puedes cargar los destacados de esa categoría
-            // Por ejemplo: cargarDestacados(nombreCategoria);
+            filtrarPorTipo(tipo);
         });
     });
 
-    /* ==========================================
-       6. EFECTOS VISUALES (hover en tarjetas)
-    ========================================== */
-    document.querySelectorAll(".tarjeta-negocio, .tarjeta-categoria").forEach(el => {
-        el.addEventListener("mouseenter", () => el.style.transform = "translateY(-4px)");
-        el.addEventListener("mouseleave", () => el.style.transform = "translateY(0)");
-    });
-
-    /* ==========================================
-       7. BOTÓN "MÁS CATEGORÍAS" (scroll suave al carrusel)
-    ========================================== */
-    const botonMasCategorias = document.querySelector(".boton-grande");
-    if (botonMasCategorias) {
-        botonMasCategorias.addEventListener("click", () => {
-            document.querySelector(".seccion-categorias").scrollIntoView({ behavior: "smooth" });
-        });
-    }
-
-
-
-});
+    // (Opcional) - Si quieres un botón para "Mostrar todo" añade:
+    // const mostrarTodoBtn = document.createElement('button');
+    // mostrarTodoBtn.textContent = 'Mostrar todo';
+    // mostrarTodoBtn.addEventListener('click', () => filtrarPorTipo('todos'));
+    // document.querySelector('.navegacion-principal').appendChild(mostrarTodoBtn);
+}); 
