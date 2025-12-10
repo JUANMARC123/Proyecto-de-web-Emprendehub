@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmprendeHub - Inicio</title>
-    <link rel="stylesheet" href="./CSS/estilos-Inicio.css">
-
+    <title>Agencias de Viajes</title>
+    <link rel="stylesheet" href="./CSS/estilos-index.css">
 </head>
 
 <body>
-
     <header class="encabezado">
         <div class="fila-superior">
             <div class="logo-contenedor">
@@ -18,250 +16,103 @@
                     class="logo-imagen">
             </div>
             <h1 id="titulo-sitio">EmprendeHub</h1>
-
-            <nav class="navegacion-principal">
-                <button class="boton-nav Agencia">Agencias</button>
-                <button class="boton-nav Distribuidoras">Distribuidoras</button>
-                <button class="boton-nav Importadora">Importadoras</button>
-            </nav>
-
         </div>
 
-        <div class="fila-busqueda">
+        <form action="Distribuidoras.html" method="GET" class="fila-busqueda">
             <div class="buscador-contenedor">
                 <span class="icono-busqueda">&#128269;</span>
-                <input type="text" placeholder="Buscar" class="campo-busqueda">
+                <input type="text" placeholder="Buscar agencias (ej: 'diseño web')" class="campo-busqueda" name="q">
             </div>
-
-            <button class="boton-primario" id="boton-buscar">Búsqueda</button>
-
-            <div class="ubicacion-contenedor">
-
-                <select id="selector-zona" class="campo-ubicacion">
-                    <option value="" disabled selected>Zona</option>
-                    <option value="1">Alto de la Alianza</option>
-                    <option value="2">Avenida Cívica </option>
-                    <option value="3">Av. 6 de Marzo </option>
-                    <option value="4">San Juan </option>
-                    <option value="5">5 12 de Octubre</option>
-                    <option value="6">6 Villa Ingenio</option>
-                    <option value="7">7 Senkata</option>
-                    <option value="8">8 Alto Lima 1ra Sección</option>
-                    <option value="9">9 Alto Lima 2da Sección</option>
-                    <option value="10">10 Alto Lima 3ra Sección</option>
-                    <option value="11">11 Ballivián</option>
-                    <option value="12">12 Río Seco</option>
-                    <option value="13">13 Villa Tunari</option>
-                    <option value="14">14 Cosmos 79</option>
-                    <option value="15">15 Santiago Primero</option>
-                    <option value="16">16 Santiago Segundo</option>
-                    <option value="17">17 Santiago Tercero</option>
-                    <option value="18">18 Villa Hermosa</option>
-                    <option value="19">19 Mercado Campana</option>
-                    <option value="20">20 Ferroviario</option>
-                    <option value="21">21 Villa Esperanza</option>
-                    <option value="22">22 La Ceja</option>
-                    <option value="23">23 Villa Dolores</option>
-                    <option value="24">24 Ciudad Satélite</option>
-                    <option value="25">25 Urbanización Mercedario</option>
-                    <option value="26">26 Villa Pacajes</option>
-                    <option value="27">27 Villa Rosario</option>
-                    <option value="28">28 Villa Ballivián</option>
-                    <option value="29">29 Villa Exaltación</option>
-                    <option value="30">30 16 de Julio</option>
-                    <option value="31">31 Faro Murillo</option>
-                    <option value="32">32 Villa San Antonio</option>
-                    <option value="33">33 Héroes del Pacífico</option>
-                    <option value="34">34 Villa Primero de Mayo</option>
-                    <option value="35">35 El Kenko</option>
-                    <option value="36">36 Rosario</option>
-                    <option value="37">37 San Luis</option>
-                    <option value="38">38 Tarapacá</option>
-                    <option value="39">39 Huayna Potosí</option>
-                    <option value="40">40 Villa Bolívar D</option>
-                    <option value="41">41 Urbanización Tiahuanacu</option>
-                    <option value="42">42 Ciudad Satélite – 14 de Septiembre</option>
-                    <option value="43">43 Villa Antofagasta</option>
-                    <option value="44">44 Urbanización Bautista Saavedra</option>
-                    <option value="45">45 Urbanización Libertad</option>
-                    <option value="46">46 Urbanización Señor de Lagunas</option>
-                    <option value="47">47 Urbanización Lotes y Servicios</option>
-                    <option value="48">48 Urbanización San Roque</option>
-                    <option value="49">49 Urbanización Pedro Domingo Murillo</option>
-                    <option value="50">50 Avenida Juan Pablo II (Sectores)</option>
-                </select>
-            </div>
-        </div>
+            <button type="submit" class="boton-primario" id="boton-buscar">Búsqueda</button>
+        </form>
     </header>
     <hr>
     <main class="contenido-principal">
-        <section class="seccion-categorias">
-            <div class="encabezado-categoria">
-                <h2 id="titulo-categorias">¿Qué estás buscando?</h2>
-                <div class="controles-carrusel">
-                    <button class="boton-carrusel atras">&#9664;</button>
-                    <button class="boton-carrusel adelante">&#9654;</button>
+        <div class="lista-categorias">
+            <form action="Distribuidoras.html" method="GET" class="tarjeta-categoria-form">
+                <input type="hidden" name="categoria" value="Alimentos (Consumo Masivo)">
+                <button type="submit" class="tarjeta-categoria">
+                    <div class="icono-categoria">&#128717;</div>
+                    <span>Sector **Alimentos (Consumo Masivo)**</span>
+                </button>
+            </form>
+
+            <form action="Distribuidoras.html" method="GET" class="tarjeta-categoria-form">
+                <input type="hidden" name="categoria" value="Farmacéuticos">
+                <button type="submit" class="tarjeta-categoria">
+                    <div class="icono-categoria">💊​</div>
+                    <span>Sector **Farmacéuticos**</span>
+                </button>
+            </form>
+
+            <form action="Distribuidoras.html" method="GET" class="tarjeta-categoria-form">
+                <input type="hidden" name="categoria" value="Ropa y Moda">
+                <button type="submit" class="tarjeta-categoria">
+                    <div class="icono-categoria">​👗​</div>
+                    <span>Sector **Ropa y Moda**</span>
+                </button>
+            </form>
+
+        </div>
+
+
+        <h1>Directorio de Agencias</h1>
+
+        <div id="contenedor-categorias">
+        </div>
+
+
+
+        <div id="modal-agencia-detalle" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <div id="modal-info">
+                    <article class="articulo-perfil">
+
+                        <header class="perfil-header">
+                            <img id="modal-logo" src="" alt="Logo de la Empresa" class="logo-empresa">
+                            <h1 class="nombre-distribuidora" id="modal-nombre"></h1>
+                            <p class="categoria">Categoría: <span id="modal-categoria"></span></p>
+                        </header>
+
+                        <section class="seccion-descripcion">
+                            <h2 class="titulo-seccion">Descripción General</h2>
+                            <p class="parrafo-descripcion" id="modal-descripcion"></p>
+                        </section>
+
+                        <section class="seccion-galeria">
+                            <h2 class="titulo-seccion">Fotos de la Marca</h2>
+                            <div class="galeria-productos-modal" id="galeria-productos-modal">
+                            </div>
+                        </section>
+
+                        <section class="seccion-contacto">
+                            <h2 class="titulo-seccion">Contacto y Ubicación Principal</h2>
+
+                            <div class="informacion-contacto">
+                                <h3 class="subtitulo-contacto">Ubicación Principal</h3>
+                                <p id="modal-direccion-principal"></p>
+                                <div id="mapa-modal"
+                                    style="height: 250px; width: 100%; margin-top: 10px; border-radius: 8px;"></div>
+                            </div>
+
+                            <div class="informacion-contacto">
+                                <h3 class="subtitulo-contacto">Todas las Sucursales en la Ciudad</h3>
+                                <ul id="modal-lista-sucursales" class="lista-productos">
+                                </ul>
+                            </div>
+
+                            <div class="botones-accion">
+                                <a id="modal-boton-whatsapp" target="_blank" href="#">
+                                    <button class="boton-whatsapp">💬 Contactar por WhatsApp</button>
+                                </a>
+                            </div>
+                        </section>
+                    </article>
                 </div>
             </div>
-
-            <div class="lista-categorias">
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128717;</div>
-                    <span>Consumo masivo</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#127866;</div>
-                    <span>Bebidas y licores</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#127822;</div>
-                    <span>Alimentos frescos, refrigerados o perecederos</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#129530;</div>
-                    <span>Higiene, limpieza y cuidado del hogar</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128132;</div>
-                    <span>Cosmética y cuidado personal</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128187;</div>
-                    <span>Electrónica y tecnología de consumo</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128085;</div>
-                    <span>Moda, calzado y textil</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#127922;</div>
-                    <span>Juguetes y artículos infantiles</span>
-                </button>
-                <button class="tarjeta-categoria" class="ferreteria-construccion">
-                    <div class="icono-categoria">&#128736;</div>
-                    <span>Ferretería, construcción y herramientas</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128663;</div>
-                    <span>Automotriz</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#129505;</div>
-                    <span>Salud, farmacia y cuidado médico</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#9999;</div>
-                    <span>Oficina y papelería</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128717;</div>
-                    <span>Hogar, decoración y menaje</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128737;</div>
-                    <span>Seguridad y protección</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#127881;</div>
-                    <span>Eventos, fiestas y artículos de celebración</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#127793;</div>
-                    <span>Agroindustrial y agricultura</span>
-                </button>
-                <button class="tarjeta-categoria">
-                    <div class="icono-categoria">&#128054;</div>
-                    <span>Mascotas</span>
-                </button>
-                <button class="tarjeta-categoria" class="muebles-electrodomesticos">
-                    <div class="icono-categoria">&#128719;</div>
-                    <span>Muebles y electrodomésticos grandes</span>
-                </button>
-            </div>
-        </section>
-
-        <section class="seccion-destacada">
-            <div class="encabezado-destacado">
-                <h3>Lo mejor de la categoría: los mas codocidos </h3>
-                <a href="./Categoria.html">
-                    <button class="boton-secundario">Ver más</button>
-                </a>
-            </div>
-            <div class="lista-tarjetas">
-                <a href="./DISTRIBUIDORA/ICA.html">
-                    <button class="tarjeta-negocio">
-                        <div class="imagen-negocio">
-                            <img src="./IMAGENES/ica/ica-logo.png" alt="Logo de la compañía (pendiente de subir)">
-                        </div>
-                        <div class="info-negocio">
-                            <p class="nombre-distribuidora">INDUSTRIAS DEL CAUCHO APARRE S.R.L. (ICA)</p>
-                            <p class="categoria-distribuidora">Ferretería, construcción y herramientas</p>
-                            <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Distribuidora
-                                </span>
-                            </p>
-                            <p>Zona: <span class="Zona">Alto de la Alianza</span> </p>
-                        </div>
-                    </button>
-                </a>
-
-                <a href="./DISTRIBUIDORA/Carpiteria.html">
-                    <button class="tarjeta-negocio">
-                        <div class="imagen-negocio">
-                            <img src="./IMAGENES/carpinteria/carpiteria.jpeg"
-                                alt="Logo de la compañía (pendiente de subir)">
-                        </div>
-                        <div class="info-negocio">
-                            <p class="nombre-distribuidora">BOLIVIAN TIMBERLAND</p>
-                            <p class="categoria-distribuidora">Muebles y electrodomésticos grandes</p>
-                            <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Agencia</span>
-                            </p>
-                            <p>Zona: <span class="Zona">San Juan</span> </p>
-                        </div>
-                    </button>
-                </a>
-
-                <a href="./DISTRIBUIDORA/Incer.html">
-                    <button class="tarjeta-negocio">
-                        <div class="imagen-negocio">
-                            <img src="./IMAGENES/incer/incer srl.jpeg" alt="Logo de la compañía (pendiente de subir)">
-                        </div>
-                        <div class="info-negocio">
-                            <p class="nombre-distribuidora">INCER – G.A.L.B. S.R.L.</p>
-                            <p class="categoria-distribuidora">Ferretería, construcción y herramientas</p>
-                            <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Importadora</span>
-                            </p>
-                            <p>Zona: <span class="Zona">Avenida Cívica</span> </p>
-                        </div>
-                    </button>
-                </a>
-
-                <a href="./DISTRIBUIDORA/Campero.html">
-                    <button class="tarjeta-negocio">
-                        <div class="imagen-negocio">
-                            <img src="./IMAGENES/campero/importadora campero.png"
-                                alt="Logo de la compañía (pendiente de subir)">
-                        </div>
-                        <div class="info-negocio">
-                            <p class="nombre-distribuidora">IMPORTADORA CAMPERO S.R.L.</p>
-                            <p class="categoria-distribuidora">Ferretería, construcción y herramientas</p>
-                            <p>Tipo de Distribuidor: <span class="tipo-distribuidor">Importadora</span>
-                            </p>
-                            <p>Zona: <span class="Zona">Av. 6 de Marzo</span> </p>
-                        </div>
-                    </button>
-                </a>
-            </div>
-        </section>
-
-        <div class="contenedor-boton-final">
-            <a href="../Categoria.html">
-                <button class="boton-primario boton-grande">MÁS CATEGORÍAS</button>
-            </a>
         </div>
     </main>
-
-    <hr>
-
     <footer class="pie-pagina">
         <div class="contenido-pie">
             <div class="columna-suscripcion">
@@ -300,7 +151,9 @@
             <p>&copy; 2025 EmprendeHub.Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="./JAVASCRIPT/Inicio.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi7iFNC3cGHMxbw1FUi0mMuEsB0vzmxw4&callback=initMap"
+        async defer></script>
+    <script src="./JAVASCRIPT/index.js"></script>
 
 </body>
 
